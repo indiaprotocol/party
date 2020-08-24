@@ -51,6 +51,31 @@
       },
       "required": [],
       "title": "Postal Address"
+    },
+    "geoCode": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "longitude": {
+          "default": null,
+          "description": "longitude",
+          "example": 18.20202,
+          "title": "longitude",
+          "type": "number"
+        },
+        "latitude": {
+          "default": null,
+          "description": "Latitude",
+          "example": 19.20202,
+          "title": "Latitude",
+          "type": "number"
+        }
+      },
+      "required": [
+        "lat",
+        "lon"
+      ],
+      "title": "Geo Code"
     }
   }
 }
