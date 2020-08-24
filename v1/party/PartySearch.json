@@ -42,37 +42,25 @@
         "per_page": {
           "default": 10,
           "description": "Number of documents returned per page",
-          "examples": 10,
+          "example": 10,
           "title": "Documents per page",
           "type": "integer"
         },
         "total_records": {
           "description": "Total records present in for the search paramter",
-          "examples": 10000,
+          "example": 10000,
           "title": "Total number of records",
           "type": "integer"
         },
         "time_ms": {
           "description": "Time taken to return the results",
-          "examples": 136,
+          "example": 136,
           "title": "Response time",
           "type": "integer"
         },
         "facets": {
           "default": {},
           "description": "Faceted query for the query paramter",
-          "example": {
-            "city": {
-              "doc_count_error_upper_bound": 0,
-              "sum_other_doc_count": 1994,
-              "buckets": [
-                {
-                  "key": "bangalore",
-                  "doc_count": 620
-                }
-              ]
-            }
-          },
           "required": [],
           "title": "Different dimensions of the data",
           "type": "object",
@@ -89,34 +77,17 @@
                   "title": "The doc_count_error_upper_bound schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": 0,
-                  "examples": [
-                    0
-                  ]
+                  "example": 0
                 },
                 "sum_other_doc_count": {
                   "default": 0,
                   "description": "Total number of documents for this facet",
-                  "examples": [
-                    1994
-                  ],
+                  "example": 1994,
                   "title": "Total number of documents",
                   "type": "integer"
                 },
                 "buckets": {
-                  "default": [],
                   "description": "Results of facets query",
-                  "examples": [
-                    [
-                      {
-                        "key": "bangalore",
-                        "doc_count": 620
-                      },
-                      {
-                        "key": "hyderabad",
-                        "doc_count": 576
-                      }
-                    ]
-                  ],
                   "title": "Facets result",
                   "type": "array",
                   "additionalItems": true,
@@ -129,12 +100,10 @@
                         "title": "The first anyOf schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
-                        "examples": [
-                          {
-                            "key": "bangalore",
-                            "doc_count": 620
-                          }
-                        ],
+                        "example": {
+                          "key": "bangalore",
+                          "doc_count": 620
+                        },
                         "required": [
                           "key",
                           "doc_count"
@@ -143,16 +112,14 @@
                           "key": {
                             "default": "",
                             "description": "Name of the city",
-                            "examples": [
-                              "bangalore"
-                            ],
+                            "example": "bangalore",
                             "title": "City Name",
                             "type": "string"
                           },
                           "doc_count": {
                             "default": 0,
                             "description": "Total number of documents for the city",
-                            "examples": [
+                            "example": [
                               620
                             ],
                             "title": "Document count",
@@ -168,54 +135,52 @@
             "model_type": {
               "default": {},
               "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
-              "examples": [
-                {
-                  "doc_count_error_upper_bound": 0,
-                  "sum_other_doc_count": 19,
-                  "buckets": [
-                    {
-                      "key": "person",
-                      "doc_count": 169627
-                    },
-                    {
-                      "key": "private_company",
-                      "doc_count": 61176
-                    },
-                    {
-                      "key": "party",
-                      "doc_count": 20878
-                    },
-                    {
-                      "key": "limited_liability_partnership",
-                      "doc_count": 5218
-                    },
-                    {
-                      "key": "public_company",
-                      "doc_count": 1976
-                    },
-                    {
-                      "key": "firm",
-                      "doc_count": 1609
-                    },
-                    {
-                      "key": "one_person_company",
-                      "doc_count": 1507
-                    },
-                    {
-                      "key": "foreign_company_subsidiary_private",
-                      "doc_count": 155
-                    },
-                    {
-                      "key": "foreign_company",
-                      "doc_count": 70
-                    },
-                    {
-                      "key": "proprietorship",
-                      "doc_count": 58
-                    }
-                  ]
-                }
-              ],
+              "example": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 19,
+                "buckets": [
+                  {
+                    "key": "person",
+                    "doc_count": 169627
+                  },
+                  {
+                    "key": "private_company",
+                    "doc_count": 61176
+                  },
+                  {
+                    "key": "party",
+                    "doc_count": 20878
+                  },
+                  {
+                    "key": "limited_liability_partnership",
+                    "doc_count": 5218
+                  },
+                  {
+                    "key": "public_company",
+                    "doc_count": 1976
+                  },
+                  {
+                    "key": "firm",
+                    "doc_count": 1609
+                  },
+                  {
+                    "key": "one_person_company",
+                    "doc_count": 1507
+                  },
+                  {
+                    "key": "foreign_company_subsidiary_private",
+                    "doc_count": 155
+                  },
+                  {
+                    "key": "foreign_company",
+                    "doc_count": 70
+                  },
+                  {
+                    "key": "proprietorship",
+                    "doc_count": 58
+                  }
+                ]
+              },
               "required": [
                 "doc_count_error_upper_bound",
                 "sum_other_doc_count",
@@ -230,14 +195,12 @@
                   "title": "The doc_count_error_upper_bound schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": 0,
-                  "examples": [
-                    0
-                  ]
+                  "example": 0
                 },
                 "sum_other_doc_count": {
                   "default": 0,
                   "description": "Total number of documents for this facet",
-                  "examples": [
+                  "example": [
                     19
                   ],
                   "title": "Total number of documents",
@@ -246,17 +209,15 @@
                 "buckets": {
                   "default": [],
                   "description": "Results of facets query",
-                  "examples": [
-                    [
-                      {
-                        "key": "person",
-                        "doc_count": 169627
-                      },
-                      {
-                        "key": "private_company",
-                        "doc_count": 61176
-                      }
-                    ]
+                  "example": [
+                    {
+                      "key": "person",
+                      "doc_count": 169627
+                    },
+                    {
+                      "key": "private_company",
+                      "doc_count": 61176
+                    }
                   ],
                   "title": "Facets result",
                   "type": "array",
@@ -270,12 +231,10 @@
                         "title": "The first anyOf schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
-                        "examples": [
-                          {
-                            "key": "person",
-                            "doc_count": 169627
-                          }
-                        ],
+                        "example": {
+                          "key": "person",
+                          "doc_count": 169627
+                        },
                         "required": [
                           "key",
                           "doc_count"
@@ -284,9 +243,7 @@
                           "key": {
                             "default": "",
                             "description": "Model type",
-                            "examples": [
-                              "person"
-                            ],
+                            "example": "person",
                             "title": "Model type",
                             "type": "string"
                           },
@@ -296,9 +253,7 @@
                             "title": "The doc_count schema",
                             "description": "An explanation about the purpose of this instance.",
                             "default": 0,
-                            "examples": [
-                              169627
-                            ]
+                            "example": 169627
                           }
                         }
                       }
@@ -310,54 +265,52 @@
             "status": {
               "default": {},
               "description": "Companies status",
-              "examples": [
-                {
-                  "doc_count_error_upper_bound": 0,
-                  "sum_other_doc_count": 90,
-                  "buckets": [
-                    {
-                      "key": "active",
-                      "doc_count": 51051
-                    },
-                    {
-                      "key": "Strike Off",
-                      "doc_count": 16352
-                    },
-                    {
-                      "key": "Under Process of Striking Off",
-                      "doc_count": 1146
-                    },
-                    {
-                      "key": "Under Process Of Strike Off",
-                      "doc_count": 426
-                    },
-                    {
-                      "key": "Amalgamated",
-                      "doc_count": 403
-                    },
-                    {
-                      "key": "Defunct",
-                      "doc_count": 175
-                    },
-                    {
-                      "key": "Converted to LLP",
-                      "doc_count": 132
-                    },
-                    {
-                      "key": "Under Liquidation",
-                      "doc_count": 91
-                    },
-                    {
-                      "key": "inactive",
-                      "doc_count": 54
-                    },
-                    {
-                      "key": "Not available for efiling",
-                      "doc_count": 51
-                    }
-                  ]
-                }
-              ],
+              "example": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 90,
+                "buckets": [
+                  {
+                    "key": "active",
+                    "doc_count": 51051
+                  },
+                  {
+                    "key": "Strike Off",
+                    "doc_count": 16352
+                  },
+                  {
+                    "key": "Under Process of Striking Off",
+                    "doc_count": 1146
+                  },
+                  {
+                    "key": "Under Process Of Strike Off",
+                    "doc_count": 426
+                  },
+                  {
+                    "key": "Amalgamated",
+                    "doc_count": 403
+                  },
+                  {
+                    "key": "Defunct",
+                    "doc_count": 175
+                  },
+                  {
+                    "key": "Converted to LLP",
+                    "doc_count": 132
+                  },
+                  {
+                    "key": "Under Liquidation",
+                    "doc_count": 91
+                  },
+                  {
+                    "key": "inactive",
+                    "doc_count": 54
+                  },
+                  {
+                    "key": "Not available for efiling",
+                    "doc_count": 51
+                  }
+                ]
+              },
               "required": [
                 "doc_count_error_upper_bound",
                 "sum_other_doc_count",
@@ -372,34 +325,26 @@
                   "title": "The doc_count_error_upper_bound schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": 0,
-                  "examples": [
-                    0
-                  ]
+                  "example": 0
                 },
                 "sum_other_doc_count": {
                   "default": 0,
                   "description": "Total number of documents for this facet",
-                  "examples": [
-                    90
-                  ],
+                  "example": 90,
                   "title": "Total number of documents",
                   "type": "integer"
                 },
                 "buckets": {
                   "default": [],
                   "description": "Results of facets query",
-                  "examples": [
-                    [
-                      {
-                        "key": "active",
-                        "doc_count": 51051
-                      },
-                      {
-                        "key": "Strike Off",
-                        "doc_count": 16352
-                      }
-                    ]
-                  ],
+                  "example": {
+                    "key": "active",
+                    "doc_count": 51051
+                  },
+                  {
+                    "key": "Strike Off",
+                    "doc_count": 16352
+                  },
                   "title": "Facets result",
                   "type": "array",
                   "additionalItems": true,
@@ -412,12 +357,10 @@
                         "title": "The first anyOf schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": {},
-                        "examples": [
-                          {
-                            "key": "active",
-                            "doc_count": 51051
-                          }
-                        ],
+                        "example": {
+                          "key": "active",
+                          "doc_count": 51051
+                        },
                         "required": [
                           "key",
                           "doc_count"
@@ -426,18 +369,14 @@
                           "key": {
                             "default": "",
                             "description": "Companies state",
-                            "examples": [
-                              "active"
-                            ],
+                            "example": "active",
                             "title": "Comapnies state",
                             "type": "string"
                           },
                           "doc_count": {
                             "default": 0,
                             "description": "Total number of documents",
-                            "examples": [
-                              51051
-                            ],
+                            "example": 51051,
                             "title": "Total number of documents",
                             "type": "integer"
                           }
@@ -455,35 +394,6 @@
     "data": {
       "default": [],
       "description": "Results of the search query",
-      "examples": [
-        [
-          {
-            "name": "INFOSYS Limited",
-            "rank": 100,
-            "type": "public_company",
-            "id": "5a76cf4da7d349e10515f860",
-            "authorized_capital": {
-              "currency": "INR",
-              "value": 1000000.0
-            },
-            "paid_up_capital": {
-              "currency": "INR",
-              "value": 1000000.0
-            },
-            "geoCode": {
-              "longitude": 27.634,
-              "latitude": 17.456
-            },
-            "created": "2017-01-01",
-            "dba": [
-              "Infosys",
-              "finnacle"
-            ],
-            "status": "active",
-            "nationality": "IN"
-          }
-        ]
-      ],
       "title": "Query results",
       "type": "array",
       "additionalItems": true,
@@ -500,9 +410,7 @@
               "name": {
                 "default": "",
                 "description": "Name of the party",
-                "examples": [
-                  "INFOSYS TECHNOLOGIES (SWEDEN) AB"
-                ],
+                "example": "INFOSYS LIMITED",
                 "title": "Party name",
                 "type": "string"
               },
@@ -512,30 +420,23 @@
                 "title": "The rank schema",
                 "description": "An explanation about the purpose of this instance.",
                 "default": 0,
-                "examples": [
-                  100
-                ]
+                "example": 100
               },
               "type": {
                 "default": "",
                 "description": "An explanation about the purpose of this instance.",
-                "examples": [
-                  "public_company"
-                ],
+                "example": "public_company",
                 "title": "The type of the party Ex: LLP/Private/Individual",
                 "type": "string"
               },
               "id": {
                 "default": "",
                 "description": "Unique identifier for the party",
-                "examples": [
-                  "5a76cf4da7d349e10515f860"
-                ],
+                "example": "5a76cf4da7d349e10515f860",
                 "title": "Unique party identifier",
                 "type": "string"
               },
               "authorized_capital": {
-                "default": {},
                 "description": "Authorized capital",
                 "title": "Authorized capital",
                 "type": "object",
@@ -547,19 +448,14 @@
                   "currency": {
                     "default": "INR",
                     "description": "ISO 4217 Currency code",
-                    "examples": [
-                      "INR",
-                      "USD"
-                    ],
+                    "example": "INR",
                     "title": "curency",
                     "type": "string"
                   },
                   "value": {
                     "default": 0.0,
                     "description": "Amount",
-                    "examples": [
-                      1000000000.0
-                    ],
+                    "example": 1000000000.0,
                     "title": "Value",
                     "type": "number"
                   }
@@ -568,9 +464,6 @@
               "paid_up_capital": {
                 "default": {},
                 "description": "Paid up capital",
-                "examples": [
-                  {}
-                ],
                 "required": [
                   "currency",
                   "value"
@@ -581,27 +474,21 @@
                   "currency": {
                     "default": "INR",
                     "description": "ISO 4217 Currency code",
-                    "examples": [
-                      "INR",
-                      "USD"
-                    ],
+                    "example": "INR",
                     "title": "curency",
                     "type": "string"
                   },
                   "value": {
-                    "default": 0.0,
                     "description": "Amount",
-                    "examples": [
-                      1000000000.0
-                    ],
+                    "example": 1000000000.0,
                     "title": "Value",
                     "type": "number"
                   }
                 },
                 "geoCode": {
                   "default": {},
-                  "description": "Geo location of the company",
-                  "examples": [
+                  "description": "Geo location of the Party Registered Address",
+                  "example": [
                     {
                       "longitude": null,
                       "latitude": null
@@ -611,24 +498,20 @@
                     "longitude",
                     "latitude"
                   ],
-                  "title": "Geolocation of the company",
+                  "title": "Geolocation of the Party Registered Address",
                   "type": "object",
                   "properties": {
                     "longitude": {
                       "default": null,
                       "description": "longitude",
-                      "examples": [
-                        18.20202
-                      ],
+                      "example": 18.20202,
                       "title": "longitude",
                       "type": "number"
                     },
                     "latitude": {
                       "default": null,
                       "description": "Latitude",
-                      "examples": [
-                        19.20202
-                      ],
+                      "example": 19.20202,
                       "title": "Latitude",
                       "type": "number"
                     }
@@ -637,12 +520,10 @@
                 "created": {
                   "$id": "#/properties/data/items/anyOf/0/properties/created",
                   "type": "string",
-                  "title": "The created schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": "",
-                  "examples": [
-                    ""
-                  ]
+                  "format": "date",
+                  "title": "The created date",
+                  "description": "Date of Creation of party",
+                  "example": "2016-09-27"
                 },
                 "dba": {
                   "$id": "#/properties/data/items/anyOf/0/properties/dba",
@@ -650,9 +531,7 @@
                   "title": "The dba schema",
                   "description": "An explanation about the purpose of this instance.",
                   "default": [],
-                  "examples": [
-                    []
-                  ],
+                  "example": [],
                   "additionalItems": true,
                   "items": {
                     "$id": "#/properties/data/items/anyOf/0/properties/dba/items"
@@ -661,25 +540,20 @@
                 "status": {
                   "default": "active",
                   "description": "Status of the company",
-                  "examples": [
-                    "active"
-                  ],
+                  "example": "active",
                   "title": "Company status",
                   "type": "string"
                 },
                 "nationality": {
                   "default": "IN",
                   "description": "Nationality of the party",
-                  "examples": [
-                    "IN", "US"
-                  ],
+                  "example": "IN",
                   "title": "Nationality of the party",
                   "type": "string"
                 }
               }
             }
           }
-          
         ]
       }
     }
