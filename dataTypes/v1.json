@@ -17,7 +17,8 @@
           "description": "Amount in 2 precision float",
           "example": 1000000000.01,
           "title": "Value",
-          "type": "number"
+          "type": "number",
+          "multipleOf": 0.01 
         }
       },
       "required": [
