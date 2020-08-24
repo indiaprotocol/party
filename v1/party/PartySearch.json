@@ -259,96 +259,96 @@
           }
         }
       }
-    }
-  },
-  "data": {
-    "$id": "#/properties/data",
-    "description": "Results of the Party search query",
-    "title": "Party Search results",
-    "type": "array",
-    "additionalItems": true,
-    "items": {
-      "$id": "#/properties/data/items",
-      "type": "object",
-      "title": "Records of party search",
-      "description": "Records returned by search on party index",
-      "default": {},
-      "properties": {
-        "name": {
-          "default": "",
-          "description": "Name of the party",
-          "example": "INFOSYS LIMITED",
-          "title": "Party name",
-          "type": "string"
-        },
-        "rank": {
-          "$id": "#/properties/data/items/properties/rank",
-          "type": "integer",
-          "title": "The rank schema",
-          "description": "Ranking of the party in the index",
-          "default": 0,
-          "example": 100
-        },
-        "type": {
-          "default": "",
-          "description": "Type of Party",
-          "example": "public_company",
-          "title": "The type of the party Ex: person/private_company",
-          "type": "string"
-        },
-        "uid": {
-          "default": "",
-          "description": "Unique identifier for the party",
-          "example": "5a76cf4da7d349e10515f860",
-          "title": "Unique party identifier",
-          "type": "string"
-        },
-        "authorized_capital": {
-          "description": "Authorized capital",
-          "title": "Authorized capital",
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/money"
-        },
-        "paid_up_capital": {
-          "description": "Paid up capital",
-          "title": "Paid up capital",
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/money"
-        },
-        "geoCode": {
-          "description": "Geo location of the Party Registered Address",
-          "title": "Geo Code",
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/geoCode"
-        },
-        "created": {
-          "$id": "#/properties/data/items/properties/created",
-          "type": "string",
-          "format": "date",
-          "title": "The created date",
-          "description": "Date of Creation of party",
-          "example": "2016-09-27"
-        },
-        "dba": {
-          "$id": "#/properties/data/items/properties/dba",
-          "type": "array",
-          "title": "The dba schema",
-          "description": "Alternate Names for doing business as",
-          "example": [
-            "infosys technologies limited"
-          ],
-          "additionalItems": true
-        },
-        "status": {
-          "default": "active",
-          "description": "Status of the company",
-          "example": "active",
-          "title": "Company status",
-          "type": "string"
-        },
-        "nationality": {
-          "default": "IN",
-          "description": "Nationality of the party",
-          "example": "IN",
-          "title": "Nationality of the party",
-          "type": "string"
+    },
+    "data": {
+      "$id": "#/properties/data",
+      "description": "Results of the Party search query",
+      "title": "Party Search results",
+      "type": "array",
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/data/items",
+        "type": "object",
+        "title": "Records of party search",
+        "description": "Records returned by search on party index",
+        "default": {},
+        "properties": {
+          "name": {
+            "default": "",
+            "description": "Name of the party",
+            "example": "INFOSYS LIMITED",
+            "title": "Party name",
+            "type": "string"
+          },
+          "rank": {
+            "$id": "#/properties/data/items/properties/rank",
+            "type": "integer",
+            "title": "The rank schema",
+            "description": "Ranking of the party in the index",
+            "default": 0,
+            "example": 100
+          },
+          "type": {
+            "default": "",
+            "description": "Type of Party",
+            "example": "public_company",
+            "title": "The type of the party Ex: person/private_company",
+            "type": "string"
+          },
+          "uid": {
+            "default": "",
+            "description": "Unique identifier for the party",
+            "example": "5a76cf4da7d349e10515f860",
+            "title": "Unique party identifier",
+            "type": "string"
+          },
+          "authorized_capital": {
+            "description": "Authorized capital",
+            "title": "Authorized capital",
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/money"
+          },
+          "paid_up_capital": {
+            "description": "Paid up capital",
+            "title": "Paid up capital",
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/money"
+          },
+          "geoCode": {
+            "description": "Geo location of the Party Registered Address",
+            "title": "Geo Code",
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/geoCode"
+          },
+          "created": {
+            "$id": "#/properties/data/items/properties/created",
+            "type": "string",
+            "format": "date",
+            "title": "The created date",
+            "description": "Date of Creation of party",
+            "example": "2016-09-27"
+          },
+          "dba": {
+            "$id": "#/properties/data/items/properties/dba",
+            "type": "array",
+            "title": "The dba schema",
+            "description": "Alternate Names for doing business as",
+            "example": [
+              "infosys technologies limited"
+            ],
+            "additionalItems": true
+          },
+          "status": {
+            "default": "active",
+            "description": "Status of the company",
+            "example": "active",
+            "title": "Company status",
+            "type": "string"
+          },
+          "nationality": {
+            "default": "IN",
+            "description": "Nationality of the party",
+            "example": "IN",
+            "title": "Nationality of the party",
+            "type": "string"
+          }
         }
       }
     }
