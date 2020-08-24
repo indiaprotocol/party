@@ -4,7 +4,6 @@
   "type": "object",
   "title": "The Party Search Response schema",
   "description": "The Party Search Response returned for a party search query.",
-  "default": {},
   "required": [
     "meta",
     "data"
@@ -15,7 +14,6 @@
       "type": "object",
       "title": "The meta schema",
       "description": "An explanation about the purpose of this instance.",
-      "default": {},
       "required": [
         "q",
         "page",
@@ -26,7 +24,6 @@
       ],
       "properties": {
         "q": {
-          "default": "",
           "description": "Generic search paramter for party search",
           "example": "crediwatch",
           "title": "Query paramter",
@@ -56,17 +53,15 @@
           "description": "Time taken to return the results",
           "example": 136,
           "title": "Response time",
-          "type": "integer"
+          "type": "number"
         },
         "facets": {
-          "default": {},
           "description": "Faceted query for the query paramter",
           "required": [],
           "title": "Different dimensions of the data",
           "type": "object",
           "properties": {
             "city": {
-              "default": {},
               "description": "Distribution of parties across different cities",
               "title": "Distribution across cities",
               "type": "object",
@@ -92,95 +87,35 @@
                   "type": "array",
                   "additionalItems": true,
                   "items": {
-                    "type": "array",
-                    "anyOf": [
-                      {
-                        "$id": "#/properties/meta/properties/facets/properties/city/properties/buckets/items/anyOf/0",
-                        "type": "object",
-                        "title": "The first anyOf schema",
-                        "description": "An explanation about the purpose of this instance.",
-                        "default": {},
-                        "example": {
-                          "key": "bangalore",
-                          "doc_count": 620
-                        },
-                        "required": [
-                          "key",
-                          "doc_count"
-                        ],
-                        "properties": {
-                          "key": {
-                            "default": "",
-                            "description": "Name of the city",
-                            "example": "bangalore",
-                            "title": "City Name",
-                            "type": "string"
-                          },
-                          "doc_count": {
-                            "default": 0,
-                            "description": "Total number of documents for the city",
-                            "example": [
-                              620
-                            ],
-                            "title": "Document count",
-                            "type": "integer"
-                          }
-                        }
+                    "type": "object",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                      "key",
+                      "doc_count"
+                    ],
+                    "properties": {
+                      "key": {
+                        "default": "",
+                        "description": "Name of the city",
+                        "example": "bangalore",
+                        "title": "City Name",
+                        "type": "string"
+                      },
+                      "doc_count": {
+                        "default": 0,
+                        "description": "Total number of documents for the city",
+                        "example": 620,
+                        "title": "Document count",
+                        "type": "integer"
                       }
-                    ]
+                    }
                   }
                 }
               }
             },
             "model_type": {
-              "default": {},
               "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
-              "example": {
-                "doc_count_error_upper_bound": 0,
-                "sum_other_doc_count": 19,
-                "buckets": [
-                  {
-                    "key": "person",
-                    "doc_count": 169627
-                  },
-                  {
-                    "key": "private_company",
-                    "doc_count": 61176
-                  },
-                  {
-                    "key": "party",
-                    "doc_count": 20878
-                  },
-                  {
-                    "key": "limited_liability_partnership",
-                    "doc_count": 5218
-                  },
-                  {
-                    "key": "public_company",
-                    "doc_count": 1976
-                  },
-                  {
-                    "key": "firm",
-                    "doc_count": 1609
-                  },
-                  {
-                    "key": "one_person_company",
-                    "doc_count": 1507
-                  },
-                  {
-                    "key": "foreign_company_subsidiary_private",
-                    "doc_count": 155
-                  },
-                  {
-                    "key": "foreign_company",
-                    "doc_count": 70
-                  },
-                  {
-                    "key": "proprietorship",
-                    "doc_count": 58
-                  }
-                ]
-              },
               "required": [
                 "doc_count_error_upper_bound",
                 "sum_other_doc_count",
@@ -200,64 +135,47 @@
                 "sum_other_doc_count": {
                   "default": 0,
                   "description": "Total number of documents for this facet",
-                  "example": [
-                    19
-                  ],
+                  "example": 19,
                   "title": "Total number of documents",
                   "type": "integer"
                 },
                 "buckets": {
                   "default": [],
                   "description": "Results of facets query",
-                  "example": [
-                    {
-                      "key": "person",
-                      "doc_count": 169627
-                    },
-                    {
-                      "key": "private_company",
-                      "doc_count": 61176
-                    }
-                  ],
                   "title": "Facets result",
                   "type": "array",
                   "additionalItems": true,
                   "items": {
-                    "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items",
-                    "anyOf": [
-                      {
-                        "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items/anyOf/0",
-                        "type": "object",
-                        "title": "The first anyOf schema",
+                    "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items/anyOf/0",
+                    "type": "object",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "example": {
+                      "key": "person",
+                      "doc_count": 169627
+                    },
+                    "required": [
+                      "key",
+                      "doc_count"
+                    ],
+                    "properties": {
+                      "key": {
+                        "default": "",
+                        "description": "Model type",
+                        "example": "person",
+                        "title": "Model type",
+                        "type": "string"
+                      },
+                      "doc_count": {
+                        "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items/anyOf/0/properties/doc_count",
+                        "type": "integer",
+                        "title": "The doc_count schema",
                         "description": "An explanation about the purpose of this instance.",
-                        "default": {},
-                        "example": {
-                          "key": "person",
-                          "doc_count": 169627
-                        },
-                        "required": [
-                          "key",
-                          "doc_count"
-                        ],
-                        "properties": {
-                          "key": {
-                            "default": "",
-                            "description": "Model type",
-                            "example": "person",
-                            "title": "Model type",
-                            "type": "string"
-                          },
-                          "doc_count": {
-                            "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items/anyOf/0/properties/doc_count",
-                            "type": "integer",
-                            "title": "The doc_count schema",
-                            "description": "An explanation about the purpose of this instance.",
-                            "default": 0,
-                            "example": 169627
-                          }
-                        }
+                        "default": 0,
+                        "example": 169627
                       }
-                    ]
+                    }
                   }
                 }
               }
@@ -265,52 +183,6 @@
             "status": {
               "default": {},
               "description": "Companies status",
-              "example": {
-                "doc_count_error_upper_bound": 0,
-                "sum_other_doc_count": 90,
-                "buckets": [
-                  {
-                    "key": "active",
-                    "doc_count": 51051
-                  },
-                  {
-                    "key": "Strike Off",
-                    "doc_count": 16352
-                  },
-                  {
-                    "key": "Under Process of Striking Off",
-                    "doc_count": 1146
-                  },
-                  {
-                    "key": "Under Process Of Strike Off",
-                    "doc_count": 426
-                  },
-                  {
-                    "key": "Amalgamated",
-                    "doc_count": 403
-                  },
-                  {
-                    "key": "Defunct",
-                    "doc_count": 175
-                  },
-                  {
-                    "key": "Converted to LLP",
-                    "doc_count": 132
-                  },
-                  {
-                    "key": "Under Liquidation",
-                    "doc_count": 91
-                  },
-                  {
-                    "key": "inactive",
-                    "doc_count": 54
-                  },
-                  {
-                    "key": "Not available for efiling",
-                    "doc_count": 51
-                  }
-                ]
-              },
               "required": [
                 "doc_count_error_upper_bound",
                 "sum_other_doc_count",
@@ -337,52 +209,49 @@
                 "buckets": {
                   "default": [],
                   "description": "Results of facets query",
-                  "example": {
-                    "key": "active",
-                    "doc_count": 51051
-                  },
-                  {
-                    "key": "Strike Off",
-                    "doc_count": 16352
-                  },
+                  "example": [
+                    {
+                      "key": "active",
+                      "doc_count": 51051
+                    },
+                    {
+                      "key": "Strike Off",
+                      "doc_count": 16352
+                    }
+                  ],
                   "title": "Facets result",
                   "type": "array",
                   "additionalItems": true,
                   "items": {
-                    "$id": "#/properties/meta/properties/facets/properties/status/properties/buckets/items",
-                    "anyOf": [
-                      {
-                        "$id": "#/properties/meta/properties/facets/properties/status/properties/buckets/items/anyOf/0",
-                        "type": "object",
-                        "title": "The first anyOf schema",
-                        "description": "An explanation about the purpose of this instance.",
-                        "default": {},
-                        "example": {
-                          "key": "active",
-                          "doc_count": 51051
-                        },
-                        "required": [
-                          "key",
-                          "doc_count"
-                        ],
-                        "properties": {
-                          "key": {
-                            "default": "",
-                            "description": "Companies state",
-                            "example": "active",
-                            "title": "Comapnies state",
-                            "type": "string"
-                          },
-                          "doc_count": {
-                            "default": 0,
-                            "description": "Total number of documents",
-                            "example": 51051,
-                            "title": "Total number of documents",
-                            "type": "integer"
-                          }
-                        }
+                    "$id": "#/properties/meta/properties/facets/properties/status/properties/buckets/items/anyOf/0",
+                    "type": "object",
+                    "title": "The first anyOf schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": {},
+                    "example": {
+                      "key": "active",
+                      "doc_count": 51051
+                    },
+                    "required": [
+                      "key",
+                      "doc_count"
+                    ],
+                    "properties": {
+                      "key": {
+                        "default": "",
+                        "description": "Companies state",
+                        "example": "active",
+                        "title": "Comapnies state",
+                        "type": "string"
+                      },
+                      "doc_count": {
+                        "default": 0,
+                        "description": "Total number of documents",
+                        "example": 51051,
+                        "title": "Total number of documents",
+                        "type": "integer"
                       }
-                    ]
+                    }
                   }
                 }
               }
@@ -390,171 +259,97 @@
           }
         }
       }
-    },
-    "data": {
-      "default": [],
-      "description": "Results of the search query",
-      "title": "Query results",
-      "type": "array",
-      "additionalItems": true,
-      "items": {
-        "$id": "#/properties/data/items",
-        "anyOf": [
-          {
-            "$id": "#/properties/data/items/anyOf/0",
-            "type": "object",
-            "title": "The first anyOf schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": {},
-            "properties": {
-              "name": {
-                "default": "",
-                "description": "Name of the party",
-                "example": "INFOSYS LIMITED",
-                "title": "Party name",
-                "type": "string"
-              },
-              "rank": {
-                "$id": "#/properties/data/items/anyOf/0/properties/rank",
-                "type": "integer",
-                "title": "The rank schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": 0,
-                "example": 100
-              },
-              "type": {
-                "default": "",
-                "description": "An explanation about the purpose of this instance.",
-                "example": "public_company",
-                "title": "The type of the party Ex: LLP/Private/Individual",
-                "type": "string"
-              },
-              "id": {
-                "default": "",
-                "description": "Unique identifier for the party",
-                "example": "5a76cf4da7d349e10515f860",
-                "title": "Unique party identifier",
-                "type": "string"
-              },
-              "authorized_capital": {
-                "description": "Authorized capital",
-                "title": "Authorized capital",
-                "type": "object",
-                "required": [
-                  "currency",
-                  "value"
-                ],
-                "properties": {
-                  "currency": {
-                    "default": "INR",
-                    "description": "ISO 4217 Currency code",
-                    "example": "INR",
-                    "title": "curency",
-                    "type": "string"
-                  },
-                  "value": {
-                    "default": 0.0,
-                    "description": "Amount",
-                    "example": 1000000000.0,
-                    "title": "Value",
-                    "type": "number"
-                  }
-                }
-              },
-              "paid_up_capital": {
-                "default": {},
-                "description": "Paid up capital",
-                "required": [
-                  "currency",
-                  "value"
-                ],
-                "title": "Paid up capital",
-                "type": "object",
-                "properties": {
-                  "currency": {
-                    "default": "INR",
-                    "description": "ISO 4217 Currency code",
-                    "example": "INR",
-                    "title": "curency",
-                    "type": "string"
-                  },
-                  "value": {
-                    "description": "Amount",
-                    "example": 1000000000.0,
-                    "title": "Value",
-                    "type": "number"
-                  }
-                },
-                "geoCode": {
-                  "default": {},
-                  "description": "Geo location of the Party Registered Address",
-                  "example": [
-                    {
-                      "longitude": null,
-                      "latitude": null
-                    }
-                  ],
-                  "required": [
-                    "longitude",
-                    "latitude"
-                  ],
-                  "title": "Geolocation of the Party Registered Address",
-                  "type": "object",
-                  "properties": {
-                    "longitude": {
-                      "default": null,
-                      "description": "longitude",
-                      "example": 18.20202,
-                      "title": "longitude",
-                      "type": "number"
-                    },
-                    "latitude": {
-                      "default": null,
-                      "description": "Latitude",
-                      "example": 19.20202,
-                      "title": "Latitude",
-                      "type": "number"
-                    }
-                  }
-                },
-                "created": {
-                  "$id": "#/properties/data/items/anyOf/0/properties/created",
-                  "type": "string",
-                  "format": "date",
-                  "title": "The created date",
-                  "description": "Date of Creation of party",
-                  "example": "2016-09-27"
-                },
-                "dba": {
-                  "$id": "#/properties/data/items/anyOf/0/properties/dba",
-                  "type": "array",
-                  "title": "The dba schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": [],
-                  "example": [],
-                  "additionalItems": true,
-                  "items": {
-                    "$id": "#/properties/data/items/anyOf/0/properties/dba/items"
-                  }
-                },
-                "status": {
-                  "default": "active",
-                  "description": "Status of the company",
-                  "example": "active",
-                  "title": "Company status",
-                  "type": "string"
-                },
-                "nationality": {
-                  "default": "IN",
-                  "description": "Nationality of the party",
-                  "example": "IN",
-                  "title": "Nationality of the party",
-                  "type": "string"
-                }
-              }
-            }
-          }
-        ]
+    }
+  },
+  "data": {
+    "$id": "#/properties/data",
+    "description": "Results of the Party search query",
+    "title": "Party Search results",
+    "type": "array",
+    "additionalItems": true,
+    "items": {
+      "$id": "#/properties/data/items",
+      "type": "object",
+      "title": "Records of party search",
+      "description": "Records returned by search on party index",
+      "default": {},
+      "properties": {
+        "name": {
+          "default": "",
+          "description": "Name of the party",
+          "example": "INFOSYS LIMITED",
+          "title": "Party name",
+          "type": "string"
+        },
+        "rank": {
+          "$id": "#/properties/data/items/properties/rank",
+          "type": "integer",
+          "title": "The rank schema",
+          "description": "Ranking of the party in the index",
+          "default": 0,
+          "example": 100
+        },
+        "type": {
+          "default": "",
+          "description": "Type of Party",
+          "example": "public_company",
+          "title": "The type of the party Ex: person/private_company",
+          "type": "string"
+        },
+        "uid": {
+          "default": "",
+          "description": "Unique identifier for the party",
+          "example": "5a76cf4da7d349e10515f860",
+          "title": "Unique party identifier",
+          "type": "string"
+        },
+        "authorized_capital": {
+          "description": "Authorized capital",
+          "title": "Authorized capital",
+          "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/money"
+        },
+        "paid_up_capital": {
+          "description": "Paid up capital",
+          "title": "Paid up capital",
+          "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/money"
+        },
+        "geoCode": {
+          "description": "Geo location of the Party Registered Address",
+          "title": "Geo Code",
+          "$ref": "https://raw.githubusercontent.com/indiaprotocol/search/master/dataTypes/v1.json#definitions/geoCode"
+        },
+        "created": {
+          "$id": "#/properties/data/items/properties/created",
+          "type": "string",
+          "format": "date",
+          "title": "The created date",
+          "description": "Date of Creation of party",
+          "example": "2016-09-27"
+        },
+        "dba": {
+          "$id": "#/properties/data/items/properties/dba",
+          "type": "array",
+          "title": "The dba schema",
+          "description": "Alternate Names for doing business as",
+          "example": [
+            "infosys technologies limited"
+          ],
+          "additionalItems": true
+        },
+        "status": {
+          "default": "active",
+          "description": "Status of the company",
+          "example": "active",
+          "title": "Company status",
+          "type": "string"
+        },
+        "nationality": {
+          "default": "IN",
+          "description": "Nationality of the party",
+          "example": "IN",
+          "title": "Nationality of the party",
+          "type": "string"
+        }
       }
     }
   }
