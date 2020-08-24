@@ -1,12 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "The Party Search Autocomplete Response schema",
-  "description": "The Party Search Autocomplete Response returned for a party search query.",
-  "required": [
-    "meta",
-    "data"
-  ],
   "properties": {
     "meta": {
       "type": "object",
