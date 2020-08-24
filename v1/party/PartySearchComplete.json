@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The Party Search Autocomplete Response schema",
+  "description": "The Party Search Autocomplete Response returned for a party search query.",
+  "required": [
+    "meta",
+    "data"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string",
+          "example": "info"
+        }
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "556277cf6d6f6f376276f50f"
+          },
+          "type": {
+            "type": "string",
+            "example": "private_company"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "INFO SERVICES PRIVATE LIMITED"
+              },
+              "status": {
+                "type": "string",
+                "example": "Strike Off"
+              },
+              "created": {
+                "type": "string",
+                "example": "1999-12-15"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
