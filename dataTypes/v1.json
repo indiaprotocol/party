@@ -78,5 +78,24 @@
       ],
       "title": "Geo Code"
     }
+  },
+  "dateRange": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "start": {
+        "description": "start Date of range",
+        "example": "2017-01-01",
+        "title": "start",
+        "type": "date"
+      },
+      "end": {
+        "description": "end Date of ranfe",
+        "example": "2018-01-01",
+        "title": "end",
+        "type": "date"
+      }
+    },
+    "title": "DateRange"
   }
 }
