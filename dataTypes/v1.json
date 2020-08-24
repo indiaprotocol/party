@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/dataTypes",
+  "definitions": {
+    "money": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "default": "INR",
+          "description": "ISO 4217 Currency code",
+          "example": "INR",
+          "title": "curency",
+          "type": "string"
+        },
+        "value": {
+          "description": "Amount in 2 precision float",
+          "example": 1000000000.0,
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "currency",
+        "value"
+      ],
+      "title": "Money"
+    },
+    "postalAddress": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "line1": {
+          "type": "string"
+        },
+        "line2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "pinCode": {
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "title": "Postal Address"
+    }
+  }
+}
