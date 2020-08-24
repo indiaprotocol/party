@@ -28,45 +28,33 @@
         "q": {
           "default": "",
           "description": "Generic search paramter for party search",
-          "examples": [
-            "infosys technologies"
-          ],
+          "example": "crediwatch",
           "title": "Query paramter",
           "type": "string"
         },
         "page": {
-          "default": 0,
+          "default": 1,
           "description": "The paramter is used for pagination of results",
-          "examples": [
-            1
-          ],
+          "example": 1,
           "title": "Page number",
           "type": "integer"
         },
         "per_page": {
-          "default": 100,
+          "default": 10,
           "description": "Number of documents returned per page",
-          "examples": [
-            100
-          ],
+          "examples": 10,
           "title": "Documents per page",
           "type": "integer"
         },
         "total_records": {
-          "default": 0,
           "description": "Total records present in for the search paramter",
-          "examples": [
-            10000
-          ],
+          "examples": 10000,
           "title": "Total number of records",
           "type": "integer"
         },
         "time_ms": {
-          "default": 0,
           "description": "Time taken to return the results",
-          "examples": [
-            136
-          ],
+          "examples": 136,
           "title": "Response time",
           "type": "integer"
         },
@@ -170,14 +158,12 @@
                             "title": "Document count",
                             "type": "integer"
                           }
-                        },
-                        "additionalProperties": true
+                        }
                       }
                     ]
                   }
                 }
-              },
-              "additionalProperties": true
+              }
             },
             "model_type": {
               "default": {},
@@ -314,14 +300,12 @@
                               169627
                             ]
                           }
-                        },
-                        "additionalProperties": true
+                        }
                       }
                     ]
                   }
                 }
-              },
-              "additionalProperties": true
+              }
             },
             "status": {
               "default": {},
@@ -457,20 +441,16 @@
                             "title": "Total number of documents",
                             "type": "integer"
                           }
-                        },
-                        "additionalProperties": true
+                        }
                       }
                     ]
                   }
                 }
-              },
-              "additionalProperties": true
+              }
             }
-          },
-          "additionalProperties": true
+          }
         }
-      },
-      "additionalProperties": true
+      }
     },
     "data": {
       "default": [],
@@ -563,7 +543,6 @@
                   "currency",
                   "value"
                 ],
-                "additionalProperties": true,
                 "properties": {
                   "currency": {
                     "default": "INR",
@@ -598,7 +577,6 @@
                 ],
                 "title": "Paid up capital",
                 "type": "object",
-                "additionalProperties": true,
                 "properties": {
                   "currency": {
                     "default": "INR",
@@ -654,8 +632,7 @@
                       "title": "Latitude",
                       "type": "number"
                     }
-                  },
-                  "additionalProperties": true
+                  }
                 },
                 "created": {
                   "$id": "#/properties/data/items/anyOf/0/properties/created",
@@ -699,14 +676,12 @@
                   "title": "Nationality of the party",
                   "type": "string"
                 }
-              },
-              "additionalProperties": true
+              }
             }
           }
           
         ]
       }
-    },
-    "additionalProperties": true
+    }
   }
 }
