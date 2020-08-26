@@ -3,7 +3,7 @@
   "$id": "https://www.indiaprotocol.com/v1/party.json",
   "$ref": "#/definitions/Party",
   "definitions": {
-    "Party":{
+    "Party": {
       "type": "object",
       "title": "The Party schema",
       "required": [
@@ -18,7 +18,7 @@
       "additionalProperties": true,
       "description": "The schema for exchange of party data",
       "properties": {
-        "uid":{
+        "uid": {
           "default": "",
           "description": "Unique IDentifier of Party",
           "examples": [
@@ -77,8 +77,14 @@
           "title": "The name of the Party",
           "type": "string"
         },
-        "nationality":{
-          "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/dataTypes/v1.json#definitions/nationality"
+        "nationality": {
+          "type": "string",
+          "title": "The ISO-3166 Alpha-2 code Country code of nationality",
+          "additionalProperties": true,
+          "description": "The schema for exchange of party data",
+          "examples": [
+            "IN"
+          ]
         },
         "authorized_capital": {
           "description": "Authorized capital",
