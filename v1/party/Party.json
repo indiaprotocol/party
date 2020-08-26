@@ -21,9 +21,7 @@
         "uid": {
           "default": "",
           "description": "Unique IDentifier of Party",
-          "example": [
-            "555e9a5d6d6f6f2eb29c3402"
-          ],
+          "example": "555e9a5d6d6f6f2eb29c3402",
           "title": "Unique IDentifier",
           "type": "string"
         },
@@ -32,36 +30,25 @@
           "title": "The slug schema",
           "description": "unique ref for Party",
           "default": "",
-          "example": [
-            "crediwatch-information-analytics-private-limited",
-            "meghna-suryakumar",
-            "sandeep-anandampillai"
-          ]
+          "example": "crediwatch-information-analytics-private-limited"
         },
         "type": {
           "description": "Type of entity as defined in Party dictionary - ",
-          "example": [
-            "private_company",
-            "person"
-          ],
+          "example": "private_company",
           "title": "Type of Party",
           "type": "string"
         },
         "status": {
           "default": "",
           "description": "The status of the Party",
-          "example": [
-            "active"
-          ],
+          "example": "active",
           "title": "The status of the Party",
           "type": "string"
         },
         "created": {
           "default": "",
           "description": "Party created date - (DOB, date of incorproration)",
-          "example": [
-            "2012-11-23"
-          ],
+          "example": "2012-11-23",
           "title": "Party created date",
           "type": "string",
           "format": "date"
@@ -69,11 +56,7 @@
         "name": {
           "default": "",
           "description": "The name of the Party",
-          "example": [
-            "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED",
-            "MEGHNA SURYAKUMAR",
-            "SANDEEP ANANDAMPILLAI"
-          ],
+          "example": "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED",
           "title": "The name of the Party",
           "type": "string"
         },
@@ -82,9 +65,7 @@
           "title": "The ISO-3166 Alpha-2 code Country code of nationality",
           "additionalProperties": true,
           "description": "The schema for exchange of party data",
-          "example": [
-            "IN"
-          ]
+          "example": "IN"
         },
         "authorized_capital": {
           "description": "Authorized capital",
