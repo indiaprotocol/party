@@ -21,7 +21,7 @@
         "uid": {
           "default": "",
           "description": "Unique IDentifier of Party",
-          "examples": [
+          "example": [
             "555e9a5d6d6f6f2eb29c3402"
           ],
           "title": "Unique IDentifier",
@@ -32,7 +32,7 @@
           "title": "The slug schema",
           "description": "unique ref for Party",
           "default": "",
-          "examples": [
+          "example": [
             "crediwatch-information-analytics-private-limited",
             "meghna-suryakumar",
             "sandeep-anandampillai"
@@ -40,7 +40,7 @@
         },
         "type": {
           "description": "Type of entity as defined in Party dictionary - ",
-          "examples": [
+          "example": [
             "private_company",
             "person"
           ],
@@ -50,7 +50,7 @@
         "status": {
           "default": "",
           "description": "The status of the Party",
-          "examples": [
+          "example": [
             "active"
           ],
           "title": "The status of the Party",
@@ -59,7 +59,7 @@
         "created": {
           "default": "",
           "description": "Party created date - (DOB, date of incorproration)",
-          "examples": [
+          "example": [
             "2012-11-23"
           ],
           "title": "Party created date",
@@ -69,7 +69,7 @@
         "name": {
           "default": "",
           "description": "The name of the Party",
-          "examples": [
+          "example": [
             "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED",
             "MEGHNA SURYAKUMAR",
             "SANDEEP ANANDAMPILLAI"
@@ -82,7 +82,7 @@
           "title": "The ISO-3166 Alpha-2 code Country code of nationality",
           "additionalProperties": true,
           "description": "The schema for exchange of party data",
-          "examples": [
+          "example": [
             "IN"
           ]
         },
