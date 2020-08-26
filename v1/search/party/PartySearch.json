@@ -267,7 +267,7 @@
       "type": "array",
       "additionalItems": true,
       "items": {
-        "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/v1/party/Party.json"
+        "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/v1/party/Party.json"
       }
     }
   }
