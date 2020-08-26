@@ -1,0 +1,84 @@
+{
+  "in": {
+    "artificial_juridical_person": {
+      "label": "Artificial Juridical Person",
+      "model": "Party"
+    },
+    "firm": {
+      "label": "Firm",
+      "model": "Party"
+    },
+    "foreign_company": {
+      "label": "Foreign Company",
+      "model": "Party"
+    },
+    "foreign_company_subsidiary_private": {
+      "label": "Foreign Company Subsidiary Private",
+      "model": "Party"
+    },
+    "foreign_company_subsidiary_public": {
+      "label": "Foreign Company Subsidiary Public",
+      "model": "Party"
+    },
+    "government_of_india": {
+      "label": "Government of India",
+      "model": "Party"
+    },
+    "krish_trust": {
+      "label": "Krish Trust",
+      "model": "Party"
+    },
+    "limited_liability_partnership": {
+      "label": "Limited Liability Partnership",
+      "model": "Party"
+    },
+    "local_authority": {
+      "label": "Local Authority",
+      "model": "Party"
+    },
+    "one_person_company": {
+      "label": "One Person Company",
+      "model": "Party"
+    },
+    "partnership": {
+      "label": "Partnership",
+      "model": "Party"
+    },
+    "person": {
+      "label": "Person",
+      "model": "Party"
+    },
+    "private_company": {
+      "label": "Private Limited Company",
+      "model": "Party"
+    },
+    "private_guarantee_and_association_company": {
+      "label": "Private Guarantee and Association Company",
+      "model": "Party"
+    },
+    "private_unlimited_liability": {
+      "label": "Private Unlimited Company",
+      "model": "Party"
+    },
+    "proprietorship": {
+      "label": "Proprietorship",
+      "model": "Party"
+    },
+    "public_company": {
+      "label": "Public Limited Company",
+      "model": "Party"
+    },
+    "section_8_company": {
+      "label": "Section 8 Company",
+      "model": "Party"
+    },
+    "state_government_company": {
+      "label": "State Government Company",
+      "model": "Party"
+    },
+    "trust": {
+      "label": "Trust",
+      "model": "Party"
+    }
+  }
+}
