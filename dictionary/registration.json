@@ -1,0 +1,55 @@
+{
+  "in": {
+    "auditor_membership_number": {"label": "",
+      "model": "Registration"
+    },
+    "bse_listing": {"label": "",
+      "model": "Registration"
+    },
+    "charge": {"label": "",
+      "model": "Registration"
+    },
+    "corporate_identification_number": {"label": "",
+      "model": "Registration"
+    },
+    "director_identification_number": {"label": "",
+      "model": "Registration"
+    },
+    "employee_provident_fund": {"label": "",
+      "model": "Registration"
+    },
+    "foreign_company_registration_number": {"label": "",
+      "model": "Registration"
+    },
+    "gstn": {"label": "",
+      "model": "Registration"
+    },
+    "importer_exporter_code": {"label": "",
+      "model": "Registration"
+    },
+    "international_securities_identification_number": {"label": "",
+      "model": "Registration"
+    },
+    "legal_entity_identifier": {"label": "",
+      "model": "Registration"
+    },
+    "llp_identification_number": {"label": "",
+      "model": "Registration"
+    },
+    "nse_listing": {"label": "",
+      "model": "Registration"
+    },
+    "passport": {"label": "",
+      "model": "Registration"
+    },
+    "permanent_account_number": {"label": "",
+      "model": "Registration"
+    },
+    "trademark": {"label": "",
+      "model": "Registration"
+    },
+    "voter_identification": {"label": "",
+      "model": "Registration"
+    }
+  }
+}

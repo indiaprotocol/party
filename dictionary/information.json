@@ -1,0 +1,118 @@
+annual returns
+quarterly returns
+
+
+
+{
+  "in": {
+    "auditors_report":{"label": "",
+      "model": "Information"
+    },
+    "bank_account":{"label": "",
+      "model": "Information"
+    },
+    "bill_of_entry":{"label": "",
+      "model": "Information"
+    },
+    "bonds_pricing":{"label": "",
+      "model": "Information"
+    },
+    "bse_announcements":{"label": "",
+      "model": "Information"
+    },
+    "bse_financial_quaterly_data":{"label": "",
+      "model": "Information"
+    },
+    "capex":{"label": "",
+      "model": "Information"
+    },
+    "ceo_remuneration":{"label": "",
+      "model": "Information"
+    },
+    "commercial_paper_pricing":{"label": "",
+      "model": "Information"
+    },
+    "consolidated_financial_year":{"label": "",
+      "model": "Information"
+    },
+    "corporate_disclosures":{"label": "",
+      "model": "Information"
+    },
+    "debentures_pricing":{"label": "",
+      "model": "Information"
+    },
+    "epf_detail":{"label": "",
+      "model": "Information"
+    },
+    "equity_breakup":{"label": "",
+      "model": "Information"
+    },
+    "exchange_announcements":{"label": "",
+      "model": "Information"
+    },
+    "external_commercial_borrowings":{"label": "",
+      "model": "Information"
+    },
+    "financial_year":{"label": "",
+      "model": "Information"
+    },
+    "gstn_filing":{"label": "",
+      "model": "Information"
+    },
+    "index_price":{"label": "",
+      "model": "Information"
+    },
+    "listed_equity_breakup":{"label": "",
+      "model": "Information"
+    },
+    "listing_price":{"label": "",
+      "model": "Information"
+    },
+    "md_remuneration":{"label": "",
+      "model": "Information"
+    },
+    "nse_announcements":{"label": "",
+      "model": "Information"
+    },
+    "nse_financial_quaterly_data":{"label": "",
+      "model": "Information"
+    },
+    "profit_loss":{"label": "",
+      "model": "Information"
+    },
+    "registration_info":{"label": "",
+      "model": "Information"
+    },
+    "remuneration":{"label": "",
+      "model": "Information"
+    },
+    "share_allotment":{"label": "",
+      "model": "Information"
+    },
+    "share_holding_info":{"label": "",
+      "model": "Information"
+    },
+    "shipping_bill":{"label": "",
+      "model": "Information"
+    },
+    "woi_info":{"label": "",
+      "model": "Information"
+    }
+  },
+  "?? what are these": {
+    "related_party",
+    "subsidiary_info",
+    "share_holding",
+    "balance_sheet",
+    "contact_info",
+  }
+  "need to move this to information"{
+    "infomerics",
+    "indiaratings",
+    "icra",
+    "crisil",
+    "care",
+    "brickwork",
+    "smera","
+  }
+}

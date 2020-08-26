@@ -10,7 +10,7 @@
           "default": "INR",
           "description": "ISO 4217 Currency code",
           "example": "INR",
-          "title": "curency",
+          "title": "Currency",
           "type": "string"
         },
         "value": {
