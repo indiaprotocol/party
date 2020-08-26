@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://www.indiaprotocol.com/v1/party.json",
+  "$ref": "#/definitions/Party",
+  "definitions": {
+    "Party":{
+      "type": "object",
+      "title": "The Party schema",
+      "required": [
+        "uid",
+        "slug",
+        "type",
+        "status",
+        "created",
+        "name",
+        "nationality"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of party data",
+      "properties": {
+        "uid":{
+          "default": "",
+          "description": "Unique IDentifier of Party",
+          "examples": [
+            "555e9a5d6d6f6f2eb29c3402"
+          ],
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "ref": {
+          "type": "string",
+          "title": "The slug schema",
+          "description": "unique ref for Party",
+          "default": "",
+          "examples": [
+            "crediwatch-information-analytics-private-limited",
+            "meghna-suryakumar",
+            "sandeep-anandampillai"
+          ]
+        },
+        "type": {
+          "description": "Type of entity as defined in Party dictionary - ",
+          "examples": [
+            "private_company",
+            "person"
+          ],
+          "title": "Type of Party",
+          "type": "string"
+        },
+        "status": {
+          "default": "",
+          "description": "The status of the Party",
+          "examples": [
+            "active"
+          ],
+          "title": "The status of the Party",
+          "type": "string"
+        },
+        "created": {
+          "default": "",
+          "description": "Party created date - (DOB, date of incorproration)",
+          "examples": [
+            "2012-11-23"
+          ],
+          "title": "Party created date",
+          "type": "string",
+          "format": "date"
+        },
+        "name": {
+          "default": "",
+          "description": "The name of the Party",
+          "examples": [
+            "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED",
+            "MEGHNA SURYAKUMAR",
+            "SANDEEP ANANDAMPILLAI"
+          ],
+          "title": "The name of the Party",
+          "type": "string"
+        },
+        "nationality":{
+          "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/dataTypes/v1.json#definitions/nationality"
+        },
+        "authorized_capital": {
+          "description": "Authorized capital",
+          "title": "Authorized capital",
+          "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/dataTypes/v1.json#definitions/money"
+        },
+        "paid_up_capital": {
+          "description": "Paid up capital",
+          "title": "Paid up capital",
+          "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/dataTypes/v1.json#definitions/money"
+        }
+      }
+    }
+  }
+}``
