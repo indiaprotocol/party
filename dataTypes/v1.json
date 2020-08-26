@@ -77,25 +77,34 @@
         "lon"
       ],
       "title": "Geo Code"
-    }
-  },
-  "dateRange": {
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-      "start": {
-        "description": "start Date of range",
-        "example": "2017-01-01",
-        "title": "start",
-        "type": "date"
-      },
-      "end": {
-        "description": "end Date of ranfe",
-        "example": "2018-01-01",
-        "title": "end",
-        "type": "date"
-      }
     },
-    "title": "DateRange"
+    "dateRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "description": "start Date of range",
+          "example": "2017-01-01",
+          "title": "start",
+          "type": "date"
+        },
+        "end": {
+          "description": "end Date of ranfe",
+          "example": "2018-01-01",
+          "title": "end",
+          "type": "date"
+        }
+      },
+      "title": "DateRange"
+    },
+    "nationality":{
+      "type": "string",
+      "title": "The ISO-3166 Alpha-2 code Country code of nationality",
+      "additionalProperties": true,
+      "description": "The schema for exchange of party data",
+      "examples": [
+        "IN"
+      ]
+    }
   }
 }
