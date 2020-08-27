@@ -86,13 +86,15 @@
           "description": "start Date of range",
           "example": "2017-01-01",
           "title": "start",
-          "type": "date"
+          "type": "string",
+          "format": "date"
         },
         "end": {
           "description": "end Date of ranfe",
           "example": "2018-01-01",
           "title": "end",
-          "type": "date"
+          "type": "string",
+          "format": "date"
         }
       },
       "title": "DateRange"
@@ -104,8 +106,17 @@
       "example":"IN"
     },
     "source":{
-      "type":"string",
+      "type":"object",
       "title": "Data source",
+      "properties": {
+        "in_gov_mca": {
+          "description": "source reference from sources dictionary with date of last refresh for item",
+          "example": "2020-08-12T13:50:44.113+05:30",
+          "type": "string",
+          "format": "dateTime"
+        }
+      },
+      "additionalProperties": true,
       "description": "The source reference of the data",
       "example":"in_gov_mca"
     }
