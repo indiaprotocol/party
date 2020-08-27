@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://www.indiaprotocol.com/v1/party.json",
+  "$id": "https://www.indiaprotocol.com/v1/party/Party.json",
   "$ref": "#/definitions/Party",
   "definitions": {
     "Party": {
@@ -13,7 +13,8 @@
         "status",
         "created",
         "name",
-        "nationality"
+        "nationality",
+        "sources"
       ],
       "additionalProperties": true,
       "description": "The schema for exchange of party data",
@@ -66,6 +67,16 @@
           "additionalProperties": true,
           "description": "The schema for exchange of party data",
           "example": "IN"
+        },
+        "sources":{
+          "type": "array",
+          "title": "The List of sources for the data",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+          },
+          "description": "The sources of the data",
+          "example": "IN"
+
         },
         "authorized_capital": {
           "description": "Authorized capital",

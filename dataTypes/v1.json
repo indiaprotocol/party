@@ -100,11 +100,14 @@
     "nationality":{
       "type": "string",
       "title": "The ISO-3166 Alpha-2 code Country code of nationality",
-      "additionalProperties": true,
       "description": "The schema for exchange of party data",
-      "examples": [
-        "IN"
-      ]
+      "example":"IN"
+    },
+    "source":{
+      "type":"string",
+      "title": "Data source",
+      "description": "The source reference of the data",
+      "example":"in_gov_mca"
     }
   }
 }
