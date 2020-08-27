@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://www.indiaprotocol.com/v1/party/PartyDocument.json",
+  "$ref": "#/definitions/Document",
+  "definitions": {
+    "Document": {
+      "type": "object",
+      "title": "The Document schema",
+      "required": [
+        "document_id",
+        "type",
+        "date",
+        "category",
+        "name",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Document data for a Party",
+      "properties": {
+        "document_id": {
+          "description": "Unique IDentifier of Document",
+          "example": "555e9a5d6d6f6f2eb29c3402",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of Document as defined in Document dictionary - ",
+          "example": "form_aoc_4",
+          "title": "Type of Document",
+          "type": "string"
+        },
+        "date": {
+          "description": "Date of Document submission to source",
+          "example": "2012-11-23",
+          "title": "date",
+          "type": "string",
+          "format": "date"
+        },
+        "category":{
+          "description": "Categoty of Document from source",
+          "example": "annual_returns",
+          "title": "Category",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the Document",
+          "example": "AOC4",
+          "title": "The name of the Document",
+          "type": "string"
+        },
+        "sources":{
+          "type": "array",
+          "title": "The List of sources for the data",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+          },
+          "description": "The sources of the data",
+          "example": "in_gov_mca"
+        }
+      }
+    }
+  }
+}

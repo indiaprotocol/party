@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://www.indiaprotocol.com/v1/party/PartyRelationship.json",
+  "$ref": "#/definitions/Relationship",
+  "definitions": {
+    "Identity": {
+      "type": "object",
+      "title": "The Relationship schema",
+      "required": [
+        "relationship_id",
+        "type",
+        "status",
+        "created",
+        "terminated",
+        "target_id",
+        "target_ref",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Relationship data for a Party",
+      "properties": {
+        "relationship_id": {
+          "description": "Object ID of Relationship",
+          "example": "555e9a5d6d6f6f2eb29c3402",
+          "title": "Object ID",
+          "type": "string"
+        },
+        "type":{
+          "description": "type of Relationship",
+          "example": "director",
+          "title": "Type",
+          "type":"string"
+        },
+        "status": {
+          "description": "The status of the Relationship",
+          "example": "active",
+          "title": "The status of the Relationship",
+          "type": "string"
+        },
+        "created": {
+          "description": "Relationship created date - (Appointed)",
+          "example": "2012-11-23",
+          "title": "Relationship created date",
+          "type": "string",
+          "format": "date"
+        },
+        "terminated":{
+          "description": "Relationship terminated date - (Resigned)",
+          "example": "2012-11-23",
+          "title": "Relationship terminated date",
+          "type": "string",
+          "format": "date"
+        },
+        "target_id": {
+          "description": "party_id of target Party",
+          "example": "555e9a5d6d6f6f2eb29c3402",
+          "title": "Object ID",
+          "type": "string"
+        },
+        "target_ref": {
+          "description": "party_ref of target Party",
+          "example": "crediwatch-information-analytics-private-limited",
+          "title": "Handle",
+          "type": "string"
+        },
+        "sources":{
+          "type": "array",
+          "title": "The List of sources for the data",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+          },
+          "description": "The sources of the data",
+          "example": "in_gov_mca"
+        }
+      }
+    }
+  }
+}

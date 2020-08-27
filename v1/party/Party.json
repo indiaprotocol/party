@@ -7,8 +7,8 @@
       "type": "object",
       "title": "The Party schema",
       "required": [
-        "uid",
-        "slug",
+        "party_id",
+        "handle",
         "type",
         "status",
         "created",
@@ -19,8 +19,7 @@
       "additionalProperties": true,
       "description": "The schema for exchange of party data",
       "properties": {
-        "uid": {
-          "default": "",
+        "party_id": {
           "description": "Unique IDentifier of Party",
           "example": "555e9a5d6d6f6f2eb29c3402",
           "title": "Unique IDentifier",
@@ -28,9 +27,8 @@
         },
         "ref": {
           "type": "string",
-          "title": "The slug schema",
+          "title": "Unique ref",
           "description": "unique ref for Party",
-          "default": "",
           "example": "crediwatch-information-analytics-private-limited"
         },
         "type": {
@@ -40,14 +38,12 @@
           "type": "string"
         },
         "status": {
-          "default": "",
           "description": "The status of the Party",
           "example": "active",
           "title": "The status of the Party",
           "type": "string"
         },
         "created": {
-          "default": "",
           "description": "Party created date - (DOB, date of incorproration)",
           "example": "2012-11-23",
           "title": "Party created date",
@@ -55,7 +51,6 @@
           "format": "date"
         },
         "name": {
-          "default": "",
           "description": "The name of the Party",
           "example": "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED",
           "title": "The name of the Party",

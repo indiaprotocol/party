@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://www.indiaprotocol.com/v1/party/PartyRegistration.json",
+  "$ref": "#/definitions/Registration",
+  "definitions": {
+    "Registration": {
+      "type": "object",
+      "title": "The Registration schema",
+      "required": [
+        "registration_id",
+        "ref",
+        "type",
+        "status",
+        "created",
+        "terminated",
+        "name",
+        "nationality",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Registration data that uniquely identifies a Party in the registry of an authority body",
+      "properties": {
+        "registration_id": {
+          "description": "Object ID of Registration",
+          "example": "555e9a5d6d6f6f2eb29c3402",
+          "title": "Object ID",
+          "type": "string"
+        },
+        "ref": {
+          "description": "Unique Registration for Party",
+          "example": "ABCDP1234A",
+          "title": "Registration",
+          "type": "string"
+        },
+        "type":{
+          "description": "type of Registration",
+          "example": "permanent_account_number",
+          "title": "Type",
+          "type":"string"
+        },
+        "label": {
+            "description": "Label for Registration",
+            "example": "PAN Number",
+            "title": "label",
+            "type":"string"
+        },
+        "sources":{
+          "type": "array",
+          "title": "The List of sources for the data",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+          },
+          "description": "The sources of the data",
+          "example": "in_gov_gstn"
+        }
+      }
+    }
+  }
+}
