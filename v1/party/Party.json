@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://www.indiaprotocol.com/v1/party/Party.json",
   "$ref": "#/definitions/Party",
   "definitions": {
     "Party": {
@@ -8,7 +7,7 @@
       "title": "The Party schema",
       "required": [
         "party_id",
-        "handle",
+        "ref",
         "type",
         "status",
         "created",
