@@ -8,10 +8,12 @@
       "title": "The Document schema",
       "required": [
         "document_id",
+        "party_id",
         "type",
         "date",
-        "category",
+        "ref",
         "name",
+        "category",
         "sources"
       ],
       "additionalProperties": true,
@@ -19,43 +21,60 @@
       "properties": {
         "document_id": {
           "description": "Unique IDentifier of Document",
-          "example": "555e9a5d6d6f6f2eb29c3402",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "party_id": {
+          "description": "Unique IDentifier of Party",
           "title": "Unique IDentifier",
           "type": "string"
         },
         "type": {
           "description": "Type of Document as defined in Document dictionary - ",
-          "example": "form_aoc_4",
           "title": "Type of Document",
           "type": "string"
         },
         "date": {
           "description": "Date of Document submission to source",
-          "example": "2012-11-23",
           "title": "date",
           "type": "string",
           "format": "date"
         },
+        "ref": {
+          "type": "string",
+          "title": "Unique ref",
+          "description": "ref for Document"
+        },
         "category":{
           "description": "Categoty of Document from source",
-          "example": "annual_returns",
           "title": "Category",
           "type": "string"
         },
         "name": {
           "description": "The name of the Document",
-          "example": "AOC4",
           "title": "The name of the Document",
           "type": "string"
         },
-        "sources":{
+        "sources": {
           "type": "array",
-          "title": "The List of sources for the data",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
           },
-          "description": "The sources of the data",
-          "example": "in_gov_mca"
+          "additionalItems": true
         }
       }
     }

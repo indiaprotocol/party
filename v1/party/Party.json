@@ -12,6 +12,7 @@
         "status",
         "created",
         "name",
+        "dba",
         "nationality",
         "sources"
       ],
@@ -20,67 +21,59 @@
       "properties": {
         "party_id": {
           "description": "Unique IDentifier of Party",
-          "example": "555e9a5d6d6f6f2eb29c3402",
           "title": "Unique IDentifier",
           "type": "string"
         },
         "ref": {
           "type": "string",
           "title": "Unique ref",
-          "description": "unique ref for Party",
-          "example": "crediwatch-information-analytics-private-limited"
+          "description": "unique ref for Party"
         },
         "type": {
           "description": "Type of entity as defined in Party dictionary - ",
-          "example": "private_company",
           "title": "Type of Party",
           "type": "string"
         },
         "status": {
           "description": "The status of the Party",
-          "example": "active",
           "title": "The status of the Party",
           "type": "string"
         },
         "created": {
           "description": "Party created date - (DOB, date of incorproration)",
-          "example": "2012-11-23",
           "title": "Party created date",
           "type": "string",
           "format": "date"
         },
         "name": {
           "description": "The name of the Party",
-          "example": "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED",
           "title": "The name of the Party",
           "type": "string"
         },
         "nationality": {
           "type": "string",
-          "title": "The ISO-3166 Alpha-2 code Country code of nationality",
-          "additionalProperties": true,
-          "description": "The schema for exchange of party data",
-          "example": "IN"
+          "title": "The ISO-3166 Alpha-2 code Country code of nationality"
         },
-        "sources":{
+        "sources": {
           "type": "array",
-          "title": "The List of sources for the data",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
           },
-          "description": "The sources of the data",
-          "example": "IN"
-
-        },
-        "authorized_capital": {
-          "description": "Authorized capital",
-          "title": "Authorized capital",
-          "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/dataTypes/v1.json#definitions/money"
-        },
-        "paid_up_capital": {
-          "description": "Paid up capital",
-          "title": "Paid up capital",
-          "$ref": "https://bitbucket.org/crediwatch/indiaprotocol/raw/edcfe67b6cb1aeacf2c4ba9f19ac449cf303ad3f/protocol/dataTypes/v1.json#definitions/money"
+          "additionalItems": true
         }
       }
     }

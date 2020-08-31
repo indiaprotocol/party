@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://www.indiaprotocol.com/v1/party/PartyRegistration.json",
   "$ref": "#/definitions/Registration",
   "definitions": {
     "Registration": {
@@ -8,6 +7,7 @@
       "title": "The Registration schema",
       "required": [
         "registration_id",
+        "party_id",
         "ref",
         "type",
         "status",
@@ -22,36 +22,70 @@
       "properties": {
         "registration_id": {
           "description": "Object ID of Registration",
-          "example": "555e9a5d6d6f6f2eb29c3402",
           "title": "Object ID",
+          "type": "string"
+        },
+        "party_id": {
+          "description": "Unique IDentifier of Party",
+          "title": "Unique IDentifier",
           "type": "string"
         },
         "ref": {
           "description": "Unique Registration for Party",
-          "example": "ABCDP1234A",
           "title": "Registration",
           "type": "string"
         },
         "type":{
           "description": "type of Registration",
-          "example": "permanent_account_number",
           "title": "Type",
           "type":"string"
         },
-        "label": {
-            "description": "Label for Registration",
-            "example": "PAN Number",
-            "title": "label",
-            "type":"string"
+        "status": {
+          "description": "The status of the Registration",
+          "title": "The status of the Registration",
+          "type": "string"
         },
-        "sources":{
+        "created": {
+          "description": "Registration created date - (DOB, date of incorproration)",
+          "title": "Party created date",
+          "type": "string",
+          "format": "date"
+        },
+        "terminated": {
+          "description": "Registration terminated date",
+          "title": "Registration terminated date",
+          "type": "string",
+          "format": "date"
+        },
+        "name": {
+          "description": "The Party name as per Registration",
+          "title": "The Party name as per Registration",
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string",
+          "title": "The ISO-3166 Alpha-2 code Country code of nationality"
+        },
+        "sources": {
           "type": "array",
-          "title": "The List of sources for the data",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/dataTypes/v1.json#definitions/source"
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
           },
-          "description": "The sources of the data",
-          "example": "in_gov_gstn"
+          "additionalItems": true
         }
       }
     }
