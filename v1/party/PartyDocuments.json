@@ -1,19 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "#/definitions/Addresses",
+  "$ref": "#/definitions/Documents",
   "definitions": {
-    "Addresses": {
+    "Documents": {
       "type": "object",
-      "title": "The Addresses schema",
+      "title": "The Documents schema",
       "required": [
         "meta",
         "data"
       ],
       "additionalProperties": false,
-      "description": "The schema for exchange of Addresses data for a party",
+      "description": "The schema for exchange of Documents data for a party",
       "properties": {
         "meta": {
-          "description": "Meta of Addresses",
+          "description": "Meta of Documents",
           "title": "meta",
           "type": "object",
           "additionalProperties": true,
@@ -26,11 +26,11 @@
           "properties": {
             "type": {
               "type": "string",
-              "description": "type of Addresses"
+              "description": "type of Documents"
             },
             "party_id": {
               "type": "string",
-              "description": "party of Addresses"
+              "description": "party of Documents"
             },
             "page": {
               "type": "integer",
@@ -49,20 +49,23 @@
           "additionalItems": false,
           "items": {
             "type": "object",
-            "title": "The Address schema",
+            "title": "The Document schema",
             "required": [
+              "document_id",
               "party_id",
-              "address_id",
-              "ref",
               "type",
+              "date",
+              "ref",
+              "name",
+              "category",
               "sources"
             ],
             "additionalProperties": true,
-            "description": "The schema for exchange of Addresss data",
+            "description": "The schema for exchange of Document data for a Party",
             "properties": {
-              "address_id": {
-                "description": "Object ID of Address",
-                "title": "Object ID",
+              "document_id": {
+                "description": "Unique IDentifier of Document",
+                "title": "Unique IDentifier",
                 "type": "string"
               },
               "party_id": {
@@ -70,15 +73,31 @@
                 "title": "Unique IDentifier",
                 "type": "string"
               },
-              "ref": {
-                "description": "Address String",
-                "title": "Address",
+              "type": {
+                "description": "Type of Document as defined in Document dictionary - ",
+                "title": "Type of Document",
                 "type": "string"
               },
-              "type":{
-                "description": "type of Address",
-                "title": "Type",
-                "type":"string"
+              "date": {
+                "description": "Date of Document submission to source",
+                "title": "date",
+                "type": "string",
+                "format": "date"
+              },
+              "ref": {
+                "type": "string",
+                "title": "Unique ref",
+                "description": "ref for Document"
+              },
+              "category":{
+                "description": "Categoty of Document from source",
+                "title": "Category",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the Document",
+                "title": "The name of the Document",
+                "type": "string"
               },
               "sources": {
                 "type": "array",
