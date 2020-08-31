@@ -1,255 +1,106 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "http://indiaprotocol.com/v1/search/party/PartySearch.json",
-  "type": "object",
-  "title": "The Party Search Response schema",
-  "description": "The Party Search Response returned for a party search query.",
-  "required": [
-    "meta",
-    "data"
-  ],
-  "properties": {
-    "meta": {
-      "$id": "#/properties/meta",
+  "$ref": "#/definitions/PartySearch",
+  "definitions": {
+    "PartySearch": {
       "type": "object",
-      "title": "The meta schema",
-      "description": "An explanation about the purpose of this instance.",
+      "title": "The PartySearch schema",
       "required": [
-        "q",
-        "page",
-        "per_page",
-        "total_records",
-        "time_ms",
-        "facets"
+        "meta",
+        "data"
       ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of PartySearch results",
       "properties": {
-        "q": {
-          "description": "Generic search paramter for party search",
-          "example": "crediwatch",
-          "title": "Query paramter",
-          "type": "string"
-        },
-        "page": {
-          "default": 1,
-          "description": "The paramter is used for pagination of results",
-          "example": 1,
-          "title": "Page number",
-          "type": "integer"
-        },
-        "per_page": {
-          "default": 10,
-          "description": "Number of documents returned per page",
-          "example": 10,
-          "title": "Documents per page",
-          "type": "integer"
-        },
-        "total_records": {
-          "description": "Total records present in for the search paramter",
-          "example": 10000,
-          "title": "Total number of records",
-          "type": "integer"
-        },
-        "time_ms": {
-          "description": "Time taken to return the results",
-          "example": 136,
-          "title": "Response time",
-          "type": "number"
-        },
-        "facets": {
-          "description": "Faceted query for the query paramter",
-          "required": [],
-          "title": "Different dimensions of the data",
+        "meta": {
+          "description": "Meta of PartySearch",
+          "title": "meta",
           "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "q",
+            "page",
+            "per_page",
+            "total_records",
+            "time_ms",
+            "facets"
+          ],
           "properties": {
-            "city": {
-              "description": "Distribution of parties across different cities",
-              "title": "Distribution across cities",
-              "type": "object",
-              "properties": {
-                "doc_count_error_upper_bound": {
-                  "$id": "#/properties/meta/properties/facets/properties/city/properties/doc_count_error_upper_bound",
-                  "type": "integer",
-                  "title": "The doc_count_error_upper_bound schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": 0,
-                  "example": 0
-                },
-                "sum_other_doc_count": {
-                  "default": 0,
-                  "description": "Total number of documents for this facet",
-                  "example": 1994,
-                  "title": "Total number of documents",
-                  "type": "integer"
-                },
-                "buckets": {
-                  "description": "Results of facets query",
-                  "title": "Facets result",
-                  "type": "array",
-                  "additionalItems": true,
-                  "items": {
-                    "type": "object",
-                    "title": "The first anyOf schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "required": [
-                      "key",
-                      "doc_count"
-                    ],
-                    "properties": {
-                      "key": {
-                        "default": "",
-                        "description": "Name of the city",
-                        "example": "bangalore",
-                        "title": "City Name",
-                        "type": "string"
-                      },
-                      "doc_count": {
-                        "default": 0,
-                        "description": "Total number of documents for the city",
-                        "example": 620,
-                        "title": "Document count",
-                        "type": "integer"
-                      }
-                    }
-                  }
-                }
-              }
+            "q": {
+              "description": "Generic search paramter for party search",
+              "title": "Query paramter",
+              "type": "string"
             },
-            "model_type": {
-              "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
-              "required": [
-                "doc_count_error_upper_bound",
-                "sum_other_doc_count",
-                "buckets"
-              ],
-              "title": "Party Distribution",
-              "type": "object",
-              "properties": {
-                "doc_count_error_upper_bound": {
-                  "$id": "#/properties/meta/properties/facets/properties/model_type/properties/doc_count_error_upper_bound",
-                  "type": "integer",
-                  "title": "The doc_count_error_upper_bound schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": 0,
-                  "example": 0
-                },
-                "sum_other_doc_count": {
-                  "default": 0,
-                  "description": "Total number of documents for this facet",
-                  "example": 19,
-                  "title": "Total number of documents",
-                  "type": "integer"
-                },
-                "buckets": {
-                  "default": [],
-                  "description": "Results of facets query",
-                  "title": "Facets result",
-                  "type": "array",
-                  "additionalItems": true,
-                  "items": {
-                    "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items/anyOf/0",
-                    "type": "object",
-                    "title": "The first anyOf schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "example": {
-                      "key": "person",
-                      "doc_count": 169627
-                    },
-                    "required": [
-                      "key",
-                      "doc_count"
-                    ],
-                    "properties": {
-                      "key": {
-                        "default": "",
-                        "description": "Model type",
-                        "example": "person",
-                        "title": "Model type",
-                        "type": "string"
-                      },
-                      "doc_count": {
-                        "$id": "#/properties/meta/properties/facets/properties/model_type/properties/buckets/items/anyOf/0/properties/doc_count",
-                        "type": "integer",
-                        "title": "The doc_count schema",
-                        "description": "An explanation about the purpose of this instance.",
-                        "default": 0,
-                        "example": 169627
-                      }
-                    }
-                  }
-                }
-              }
+            "page": {
+              "type": "integer",
+              "description": "page number of paginagted response"
             },
-            "status": {
-              "default": {},
-              "description": "Companies status",
-              "required": [
-                "doc_count_error_upper_bound",
-                "sum_other_doc_count",
-                "buckets"
-              ],
-              "title": "Company status",
+            "per_page": {
+              "type": "integer",
+              "description": "size of paginated response"
+            },
+            "total_records": {
+              "description": "Total records present in for the search paramter",
+              "title": "Total number of records",
+              "type": "integer"
+            },
+            "time_ms": {
+              "description": "Time taken to return the results",
+              "title": "Response time",
+              "type": "number"
+            },
+            "facets": {
+              "description": "Faceted query for the query paramter",
+              "title": "Different dimensions of the data",
               "type": "object",
+              "additionalProperties": true,
               "properties": {
-                "doc_count_error_upper_bound": {
-                  "$id": "#/properties/meta/properties/facets/properties/status/properties/doc_count_error_upper_bound",
-                  "type": "integer",
-                  "title": "The doc_count_error_upper_bound schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": 0,
-                  "example": 0
-                },
-                "sum_other_doc_count": {
-                  "default": 0,
-                  "description": "Total number of documents for this facet",
-                  "example": 90,
-                  "title": "Total number of documents",
-                  "type": "integer"
-                },
-                "buckets": {
-                  "default": [],
-                  "description": "Results of facets query",
-                  "example": [
-                    {
-                      "key": "active",
-                      "doc_count": 51051
-                    },
-                    {
-                      "key": "Strike Off",
-                      "doc_count": 16352
-                    }
+                "type": {
+                  "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
+                  "required": [
+                    "doc_count_error_upper_bound",
+                    "sum_other_doc_count",
+                    "buckets"
                   ],
-                  "title": "Facets result",
-                  "type": "array",
-                  "additionalItems": true,
-                  "items": {
-                    "$id": "#/properties/meta/properties/facets/properties/status/properties/buckets/items/anyOf/0",
-                    "type": "object",
-                    "title": "The first anyOf schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "example": {
-                      "key": "active",
-                      "doc_count": 51051
+                  "title": "Type Distribution",
+                  "type": "object",
+                  "properties": {
+                    "doc_count_error_upper_bound": {
+                      "type": "integer",
+                      "title": "The doc_count_error_upper_bound schema",
+                      "description": "An explanation about the purpose of this instance."
                     },
-                    "required": [
-                      "key",
-                      "doc_count"
-                    ],
-                    "properties": {
-                      "key": {
-                        "default": "",
-                        "description": "Companies state",
-                        "example": "active",
-                        "title": "Comapnies state",
-                        "type": "string"
-                      },
-                      "doc_count": {
-                        "default": 0,
-                        "description": "Total number of documents",
-                        "example": 51051,
-                        "title": "Total number of documents",
-                        "type": "integer"
+                    "sum_other_doc_count": {
+                      "description": "Total number of documents for this facet",
+                      "title": "Total number of documents",
+                      "type": "integer"
+                    },
+                    "buckets": {
+                      "default": [],
+                      "description": "Results of facets query",
+                      "title": "Facets result",
+                      "type": "array",
+                      "additionalItems": true,
+                      "items": {
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "required": [
+                          "key",
+                          "doc_count"
+                        ],
+                        "properties": {
+                          "key": {
+                            "description": "key of the query facet",
+                            "title": "facet key",
+                            "type": "string"
+                          },
+                          "doc_count": {
+                            "type": "integer",
+                            "title": "The doc_count schema",
+                            "description": "An explanation about the purpose of this instance."
+                          }
+                        }
                       }
                     }
                   }
@@ -261,13 +112,84 @@
       }
     },
     "data": {
-      "$id": "#/properties/data",
       "description": "Results of the Party search query",
       "title": "Party Search results",
       "type": "array",
       "additionalItems": true,
       "items": {
-        "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/v1/party/Party.json"
+        "type": "object",
+        "title": "The Party schema",
+        "required": [
+          "party_id",
+          "ref",
+          "type",
+          "status",
+          "created",
+          "name",
+          "dba",
+          "nationality",
+          "sources"
+        ],
+        "additionalProperties": true,
+        "description": "The schema for exchange of party data",
+        "properties": {
+          "party_id": {
+            "description": "Unique IDentifier of Party",
+            "title": "Unique IDentifier",
+            "type": "string"
+          },
+          "ref": {
+            "type": "string",
+            "title": "Unique ref",
+            "description": "unique ref for Party"
+          },
+          "type": {
+            "description": "Type of entity as defined in Party dictionary - ",
+            "title": "Type of Party",
+            "type": "string"
+          },
+          "status": {
+            "description": "The status of the Party",
+            "title": "The status of the Party",
+            "type": "string"
+          },
+          "created": {
+            "description": "Party created date - (DOB, date of incorproration)",
+            "title": "Party created date",
+            "type": "string",
+            "format": "date"
+          },
+          "name": {
+            "description": "The name of the Party",
+            "title": "The name of the Party",
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string",
+            "title": "The ISO-3166 Alpha-2 code Country code of nationality"
+          },
+          "sources": {
+            "type": "array",
+            "title": "Data sources",
+            "description": "The sources reference of the data",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "description": "source reference from sources dictionary",
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "dateTime",
+                  "description": "timestamp of the last refresh of data from source"
+                }
+              },
+              "additionalProperties": false
+            },
+            "additionalItems": true
+          }
+        }
       }
     }
   }

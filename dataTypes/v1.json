@@ -32,16 +32,16 @@
       ],
       "title": "Geo Code",
       "properties": {
-        "lon": {
-          "default": null,
-          "description": "longitude",
-          "title": "longitude",
-          "type": "number"
-        },
         "lat": {
           "default": null,
           "description": "Latitude",
           "title": "Latitude",
+          "type": "number"
+        },
+        "lon": {
+          "default": null,
+          "description": "longitude",
+          "title": "longitude",
           "type": "number"
         }
       },
@@ -86,6 +86,64 @@
         "additionalProperties": false
       },
       "additionalItems": true
+    },
+    "facets": {
+      "description": "Faceted query for the query paramter",
+      "title": "Different dimensions of the data",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "type": {
+          "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
+          "required": [
+            "doc_count_error_upper_bound",
+            "sum_other_doc_count",
+            "buckets"
+          ],
+          "title": "Type Distribution",
+          "type": "object",
+          "properties": {
+            "doc_count_error_upper_bound": {
+              "type": "integer",
+              "title": "The doc_count_error_upper_bound schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "sum_other_doc_count": {
+              "description": "Total number of documents for this facet",
+              "title": "Total number of documents",
+              "type": "integer"
+            },
+            "buckets": {
+              "default": [],
+              "description": "Results of facets query",
+              "title": "Facets result",
+              "type": "array",
+              "additionalItems": true,
+              "items": {
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "required": [
+                  "key",
+                  "doc_count"
+                ],
+                "properties": {
+                  "key": {
+                    "description": "key of the query facet",
+                    "title": "facet key",
+                    "type": "string"
+                  },
+                  "doc_count": {
+                    "type": "integer",
+                    "title": "The doc_count schema",
+                    "description": "An explanation about the purpose of this instance."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

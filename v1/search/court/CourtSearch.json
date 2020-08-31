@@ -109,7 +109,6 @@
                     ],
                     "properties": {
                       "key": {
-                        "default": "",
                         "description": "case_type",
                         "example": "wp",
                         "title": "Case Type",
@@ -169,7 +168,6 @@
                     ],
                     "properties": {
                       "key": {
-                        "default": "",
                         "description": "year",
                         "example": "2017",
                         "title": "Year",
@@ -230,7 +228,6 @@
                     ],
                     "properties": {
                       "key": {
-                        "default": "",
                         "description": "Case status",
                         "example": "active",
                         "title": "Case status",
@@ -266,7 +263,6 @@
         "default": {},
         "properties": {
           "petitioner": {
-            "default": "",
             "description": "Names of the petitioners",
             "example": "arul",
             "title": "Petitioner names",
@@ -277,7 +273,6 @@
             }
           },
           "respondent": {
-            "default": "",
             "description": "Names of the respondents",
             "example": "swaminathan",
             "title": "Respondent names",
@@ -288,7 +283,6 @@
             }
           },
           "type": {
-            "default": "",
             "description": "Type of Case",
             "example": "wp",
             "title": "The type of the case",
