@@ -1,244 +1,133 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.crediwatch.com/v1/search/courts.json",
-  "type": "object",
-  "title": "The Court Search Response schema",
-  "description": "The Court Search Response returned for a query.",
-  "required": [
-    "meta",
-    "data"
-  ],
-  "properties": {
-    "meta": {
-      "$id": "#/properties/meta",
+  "$ref": "#/definitions/CourtSearch",
+  "definitions": {
+    "CourtSearch": {
       "type": "object",
-      "title": "The meta schema",
-      "description": "Meta information on the response/request",
+      "title": "The CourtSearch schema",
       "required": [
-        "name",
-        "fathers_name",
-        "created",
-        "page",
-        "per_page",
-        "total_records",
-        "time_ms",
-        "facets"
+        "meta",
+        "data"
       ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of CourtSearch results",
       "properties": {
-        "name": {
-          "description": "Name of party for Court search",
-          "example": "Arul",
-          "title": "Query paramter",
-          "type": "string"
-        },
-        "fathers_name": {
-          "description": "Name of father/related of party for Court search",
-          "example": "Swaminathan",
-          "title": "Query paramter",
-          "type": "string"
-        },
-        "created": {
-          "description": "Date of birth/incorporation of party",
-          "example": "1980-01-01",
-          "title": "Query paramter",
-          "type": "string",
-          "format": "date"
-        },
-        "page": {
-          "default": 1,
-          "description": "The paramter is used for pagination of results",
-          "example": 1,
-          "title": "Page number",
-          "type": "integer"
-        },
-        "per_page": {
-          "default": 10,
-          "description": "Number of documents returned per page",
-          "example": 10,
-          "title": "Documents per page",
-          "type": "integer"
-        },
-        "total_records": {
-          "description": "Total records present in for the search paramter",
-          "example": 10000,
-          "title": "Total number of records",
-          "type": "integer"
-        },
-        "time_ms": {
-          "description": "Time taken to return the results",
-          "example": 136,
-          "title": "Response time",
-          "type": "number"
-        },
-        "facets": {
-          "description": "Faceted query for the query paramter",
-          "required": [],
-          "title": "Different dimensions of the data",
+        "meta": {
+          "description": "Meta of CourtSearch",
+          "title": "meta",
           "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "name",
+            "co_litigants",
+            "courts",
+            "litigant_type",
+            "from",
+            "page",
+            "per_page",
+            "total_records",
+            "time_ms",
+            "facets"
+          ],
           "properties": {
-            "case_type": {
-              "description": "Distribution of Case Types across different cities",
-              "title": "Distribution across Case Types",
+            "name": {
+              "description": "name of litigant for court search",
+              "title": "Name",
+              "type": "string"
+            },
+            "litigant_type":{
+              "type": "string",
+              "description": "respondent or petitioner"
+            },
+            "co_litigants": {
               "type": "object",
+              "additionalProperties": true,
               "properties": {
-                "doc_count_error_upper_bound": {
-                  "$id": "#/properties/meta/properties/facets/properties/case_type/properties/doc_count_error_upper_bound",
-                  "type": "integer",
-                  "title": "The doc_count_error_upper_bound schema",
-                  "description": "",
-                  "example": 0
-                },
-                "sum_other_doc_count": {
-                  "default": 0,
-                  "description": "Total number of documents for this facet",
-                  "example": 1994,
-                  "title": "Total number of documents",
-                  "type": "integer"
-                },
-                "buckets": {
-                  "description": "Results of facets query",
-                  "title": "Facets result",
+                "4":{
                   "type": "array",
-                  "additionalItems": true,
                   "items": {
-                    "type": "object",
-                    "description": "",
-                    "required": [
-                      "key",
-                      "doc_count"
-                    ],
-                    "properties": {
-                      "key": {
-                        "description": "case_type",
-                        "example": "wp",
-                        "title": "Case Type",
-                        "type": "string"
-                      },
-                      "doc_count": {
-                        "default": 0,
-                        "description": "Total number of documents for the case_type",
-                        "example": 620,
-                        "title": "Document count",
-                        "type": "integer"
-                      }
-                    }
+                    "type": "string",
+                    "description": "names of co_litigants corresponding to the key of the array block ('4')"
                   }
                 }
               }
             },
-            "year": {
-              "description": "Facet query on the year of the case filed",
-              "required": [
-                "doc_count_error_upper_bound",
-                "sum_other_doc_count",
-                "buckets"
-              ],
-              "title": "Year Distribution",
+            "page": {
+              "type": "integer",
+              "description": "page number of paginagted response"
+            },
+            "per_page": {
+              "type": "integer",
+              "description": "size of paginated response"
+            },
+            "total_records": {
+              "description": "Total records present in for the search paramter",
+              "title": "Total number of records",
+              "type": "integer"
+            },
+            "time_ms": {
+              "description": "Time taken to return the results",
+              "title": "Response time",
+              "type": "number"
+            },
+            "from":{
+              "description": "Date from boudary for search",
+                "title": "from for filing date",
+                "type": "string",
+                "format": "date"
+            },
+            "facets": {
+              "description": "Faceted query for the query paramter",
+              "title": "Different dimensions of the data",
               "type": "object",
+              "additionalProperties": true,
               "properties": {
-                "doc_count_error_upper_bound": {
-                  "$id": "#/properties/meta/properties/facets/properties/year/properties/doc_count_error_upper_bound",
-                  "type": "integer",
-                  "title": "The doc_count_error_upper_bound schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": 0,
-                  "example": 0
-                },
-                "sum_other_doc_count": {
-                  "default": 0,
-                  "description": "Total number of documents for this facet",
-                  "example": 19,
-                  "title": "Total number of documents",
-                  "type": "integer"
-                },
-                "buckets": {
-                  "default": [],
-                  "description": "Results of facets query",
-                  "title": "Facets result",
-                  "type": "array",
-                  "additionalItems": true,
-                  "items": {
-                    "$id": "#/properties/meta/properties/facets/properties/year/properties/buckets/items/anyOf/0",
-                    "type": "object",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": {},
-                    "required": [
-                      "key",
-                      "doc_count"
-                    ],
-                    "properties": {
-                      "key": {
-                        "description": "year",
-                        "example": "2017",
-                        "title": "Year",
-                        "type": "number"
-                      },
-                      "doc_count": {
-                        "$id": "#/properties/meta/properties/facets/properties/year/properties/buckets/items/anyOf/0/properties/doc_count",
-                        "type": "integer",
-                        "title": "The doc_count schema",
+                "type": {
+                  "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
+                  "required": [
+                    "doc_count_error_upper_bound",
+                    "sum_other_doc_count",
+                    "buckets"
+                  ],
+                  "title": "Type Distribution",
+                  "type": "object",
+                  "properties": {
+                    "doc_count_error_upper_bound": {
+                      "type": "integer",
+                      "title": "The doc_count_error_upper_bound schema",
+                      "description": "An explanation about the purpose of this instance."
+                    },
+                    "sum_other_doc_count": {
+                      "description": "Total number of documents for this facet",
+                      "title": "Total number of documents",
+                      "type": "integer"
+                    },
+                    "buckets": {
+                      "default": [],
+                      "description": "Results of facets query",
+                      "title": "Facets result",
+                      "type": "array",
+                      "additionalItems": true,
+                      "items": {
+                        "type": "object",
+                        "title": "The first anyOf schema",
                         "description": "An explanation about the purpose of this instance.",
-                        "default": 0,
-                        "example": 169627
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "status": {
-              "default": {},
-              "description": "Case status",
-              "required": [
-                "doc_count_error_upper_bound",
-                "sum_other_doc_count",
-                "buckets"
-              ],
-              "title": "Case status",
-              "type": "object",
-              "properties": {
-                "doc_count_error_upper_bound": {
-                  "$id": "#/properties/meta/properties/facets/properties/status/properties/doc_count_error_upper_bound",
-                  "type": "integer",
-                  "title": "The doc_count_error_upper_bound schema",
-                  "description": "An explanation about the purpose of this instance.",
-                  "default": 0,
-                  "example": 0
-                },
-                "sum_other_doc_count": {
-                  "default": 0,
-                  "description": "Total number of documents for this facet",
-                  "example": 90,
-                  "title": "Total number of documents",
-                  "type": "integer"
-                },
-                "buckets": {
-                  "default": [],
-                  "description": "Results of facets query",
-                  "title": "Facets result",
-                  "type": "array",
-                  "additionalItems": true,
-                  "items": {
-                    "$id": "#/properties/meta/properties/facets/properties/status/properties/buckets/items/anyOf/0",
-                    "type": "object",
-                    "description": "An explanation about the purpose of this instance.",
-                    "required": [
-                      "key",
-                      "doc_count"
-                    ],
-                    "properties": {
-                      "key": {
-                        "description": "Case status",
-                        "example": "active",
-                        "title": "Case status",
-                        "type": "string"
-                      },
-                      "doc_count": {
-                        "default": 0,
-                        "description": "Total number of documents",
-                        "example": 51051,
-                        "title": "Total number of documents",
-                        "type": "integer"
+                        "required": [
+                          "key",
+                          "doc_count"
+                        ],
+                        "properties": {
+                          "key": {
+                            "description": "key of the query facet",
+                            "title": "facet key",
+                            "type": "string"
+                          },
+                          "doc_count": {
+                            "type": "integer",
+                            "title": "The doc_count schema",
+                            "description": "An explanation about the purpose of this instance."
+                          }
+                        }
                       }
                     }
                   }
@@ -250,59 +139,138 @@
       }
     },
     "data": {
-      "$id": "#/properties/data",
-      "description": "Results of the Court search query",
-      "title": "Court Search results",
-      "type": "array",
-      "additionalItems": true,
-      "items": {
-        "$id": "#/properties/data/items",
-        "type": "object",
-        "title": "Records of Court search",
-        "description": "Records returned by search on Court index",
-        "default": {},
-        "properties": {
-          "petitioner": {
-            "description": "Names of the petitioners",
-            "example": "arul",
-            "title": "Petitioner names",
-            "type": "array",
-            "additionalItems": true,
-            "items": {
-              "type": "string"
+      "type": "object",
+      "title": "The Court Case schema",
+      "required": [
+        "case_id",
+        "ref",
+        "court_type",
+        "case_type",
+        "act",
+        "section",
+        "status",
+        "created",
+        "petitioner",
+        "respondent",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Court Case data",
+      "properties": {
+        "case_id": {
+          "description": "Unique IDentifier of Court Case",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "ref": {
+          "type": "string",
+          "title": "Unique ref",
+          "description": "unique ref for Court Case"
+        },
+        "court_type": {
+          "description": "Type of Court where case is filed",
+          "title": "Type of Court",
+          "type": "string"
+        },
+        "case_type": {
+          "description": "Type of Case as defined in Court Case dictionary - ",
+          "title": "Type of Case",
+          "type": "string"
+        },
+        "act":{
+          "description": "Act under which Case is filed",
+          "title": "Act of Case",
+          "type": "string"
+        },
+        "section":{
+          "description": "Section under which Case is filed",
+          "title": "Section of Case",
+          "type": "string"
+        },
+        "status": {
+          "description": "The status of the Court Case",
+          "title": "The status of the Court Case",
+          "type": "string"
+        },
+        "created": {
+          "description": "Court Case filing date",
+          "title": "Court Case filing date",
+          "type": "string",
+          "format": "date"
+        },
+        "petitioner": {
+          "description": "The names of the Petitioners",
+          "title": "The names of the Petitioners",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "name of Petitioner",
+                "type": "string"
+              },
+              "advocate": {
+                "type": "string",
+                "description": "name of petitioner advocate"
+              },
+              "address": {
+                "type": "string",
+                "description": "Address of petitioner"
+              },
+              "relation_to":{
+                "type": "string",
+                "description": "Related person of petitioner"
+              }
             }
-          },
-          "respondent": {
-            "description": "Names of the respondents",
-            "example": "swaminathan",
-            "title": "Respondent names",
-            "type": "array",
-            "additionalItems": true,
-            "items": {
-              "type": "string"
-            }
-          },
-          "type": {
-            "description": "Type of Case",
-            "example": "wp",
-            "title": "The type of the case",
-            "type": "string"
-          },
-          "filing_date": {
-            "$id": "#/properties/data/items/properties/created",
-            "type": "string",
-            "format": "date",
-            "title": "The case filing  date",
-            "description": "Date of filing of Case",
-            "example": "2016-09-27"
-          },
-          "status": {
-            "default": "active",
-            "description": "Status of the Case",
-            "example": "pending",
-            "title": "Case status",
-            "type": "string"
+
           }
+        },
+        "respondent":{
+          "description": "The names of the Respondents",
+          "title": "The names of the Respondents",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "name of Respondent",
+                "type": "string"
+              },
+              "advocate": {
+                "type": "string",
+                "description": "name of Respondent advocate"
+              },
+              "address": {
+                "type": "string",
+                "description": "Address of Respondent"
+              },
+              "relation_to":{
+                "type": "string",
+                "description": "Related person of Respondent"
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
+          },
+          "additionalItems": true
         }
       }
     }
