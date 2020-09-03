@@ -20,6 +20,7 @@
           "required": [
             "party_id",
             "type",
+            "total_records",
             "page",
             "per_page"
           ],

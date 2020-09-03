@@ -11,6 +11,7 @@
         "party_ref",
         "target_id",
         "target_ref",
+        "target_name",
         "type",
         "name",
         "status",
@@ -44,6 +45,11 @@
         "target_ref": {
           "description": "party_ref of target Party",
           "title": "Handle",
+          "type": "string"
+        },
+        "target_name": {
+          "description": "Name of target party",
+          "title": "target name",
           "type": "string"
         },
         "type":{
