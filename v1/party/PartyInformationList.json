@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/Information",
+  "definitions": {
+    "Registration": {
+      "type": "object",
+      "title": "The Information schema",
+      "required": [
+        "information_id",
+        "party_id",
+        "ref",
+        "type",
+        "created",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Information data for a Party",
+      "properties": {
+        "information_id": {
+          "description": "Object ID of Information",
+          "title": "Object ID",
+          "type": "string"
+        },
+        "party_id": {
+          "description": "Unique IDentifier of Party",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "ref": {
+          "description": "reference Information for Party",
+          "title": "Information",
+          "type": "string"
+        },
+        "type":{
+          "description": "type of Information",
+          "title": "Type",
+          "type":"string"
+        },
+        "created": {
+          "description": "Information created date",
+          "title": "Information created date",
+          "type": "string",
+          "format": "date"
+        },
+        "sources": {
+          "type": "array",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
+          },
+          "additionalItems": true
+        }
+      }
+    }
+  }
+}

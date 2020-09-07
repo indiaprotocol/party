@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/PartySearch",
+  "definitions": {
+    "PartySearch": {
+      "type": "object",
+      "title": "The PartySearch schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of PartySearch results",
+      "properties": {
+        "meta": {
+          "description": "Meta of PartySearch",
+          "title": "meta",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "q",
+            "page",
+            "per_page",
+            "total_records",
+            "time_ms",
+            "facets"
+          ],
+          "properties": {
+            "q": {
+              "description": "Generic search paramter for party search",
+              "title": "Query paramter",
+              "type": "string"
+            },
+            "page": {
+              "type": "integer",
+              "description": "page number of paginagted response"
+            },
+            "per_page": {
+              "type": "integer",
+              "description": "size of paginated response"
+            },
+            "total_records": {
+              "description": "Total records present in for the search paramter",
+              "title": "Total number of records",
+              "type": "integer"
+            },
+            "time_ms": {
+              "description": "Time taken to return the results",
+              "title": "Response time",
+              "type": "number"
+            },
+            "facets": {
+              "description": "Faceted query for the query paramter",
+              "title": "Different dimensions of the data",
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "type": {
+                  "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
+                  "required": [
+                    "doc_count_error_upper_bound",
+                    "sum_other_doc_count",
+                    "buckets"
+                  ],
+                  "title": "Type Distribution",
+                  "type": "object",
+                  "properties": {
+                    "doc_count_error_upper_bound": {
+                      "type": "integer",
+                      "title": "The doc_count_error_upper_bound schema",
+                      "description": "An explanation about the purpose of this instance."
+                    },
+                    "sum_other_doc_count": {
+                      "description": "Total number of documents for this facet",
+                      "title": "Total number of documents",
+                      "type": "integer"
+                    },
+                    "buckets": {
+                      "default": [],
+                      "description": "Results of facets query",
+                      "title": "Facets result",
+                      "type": "array",
+                      "additionalItems": true,
+                      "items": {
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "required": [
+                          "key",
+                          "doc_count"
+                        ],
+                        "properties": {
+                          "key": {
+                            "description": "key of the query facet",
+                            "title": "facet key",
+                            "type": "string"
+                          },
+                          "doc_count": {
+                            "type": "integer",
+                            "title": "The doc_count schema",
+                            "description": "An explanation about the purpose of this instance."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "description": "Results of the Party search query",
+      "title": "Party Search results",
+      "type": "array",
+      "additionalItems": true,
+      "items": {
+        "type": "object",
+        "title": "The Party schema",
+        "required": [
+          "party_id",
+          "ref",
+          "type",
+          "status",
+          "created",
+          "name",
+          "dba",
+          "nationality",
+          "sources"
+        ],
+        "additionalProperties": true,
+        "description": "The schema for exchange of party data",
+        "properties": {
+          "party_id": {
+            "description": "Unique IDentifier of Party",
+            "title": "Unique IDentifier",
+            "type": "string"
+          },
+          "ref": {
+            "type": "string",
+            "title": "Unique ref",
+            "description": "unique ref for Party"
+          },
+          "type": {
+            "description": "Type of entity as defined in Party dictionary - ",
+            "title": "Type of Party",
+            "type": "string"
+          },
+          "status": {
+            "description": "The status of the Party",
+            "title": "The status of the Party",
+            "type": "string"
+          },
+          "created": {
+            "description": "Party created date - (DOB, date of incorproration)",
+            "title": "Party created date",
+            "type": "string",
+            "format": "date"
+          },
+          "name": {
+            "description": "The name of the Party",
+            "title": "The name of the Party",
+            "type": "string"
+          },
+          "nationality": {
+            "type": "string",
+            "title": "The ISO-3166 Alpha-2 code Country code of nationality"
+          },
+          "sources": {
+            "type": "array",
+            "title": "Data sources",
+            "description": "The sources reference of the data",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "description": "source reference from sources dictionary",
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "dateTime",
+                  "description": "timestamp of the last refresh of data from source"
+                }
+              },
+              "additionalProperties": false
+            },
+            "additionalItems": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/Registrations",
+  "definitions": {
+    "Registrations": {
+      "type": "object",
+      "title": "The Registrations schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of Registrations data for a party",
+      "properties": {
+        "meta": {
+          "description": "Meta of Registrations",
+          "title": "meta",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "party_id",
+            "type",
+            "page",
+            "per_page"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "type of Registrations"
+            },
+            "party_id": {
+              "type": "string",
+              "description": "party of Registrations"
+            },
+            "page": {
+              "type": "integer",
+              "description": "page number of paginagted response"
+            },
+            "per_page": {
+              "type": "integer",
+              "description": "size of paginated response"
+            }
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "The Registration schema",
+          "required": [
+            "registration_id",
+            "party_id",
+            "ref",
+            "type",
+            "status",
+            "created",
+            "terminated",
+            "name",
+            "nationality",
+            "sources"
+          ],
+          "additionalProperties": true,
+          "description": "The schema for exchange of Registration data that uniquely identifies a Party in the registry of an authority body",
+          "properties": {
+            "registration_id": {
+              "description": "Object ID of Registration",
+              "title": "Object ID",
+              "type": "string"
+            },
+            "party_id": {
+              "description": "Unique IDentifier of Party",
+              "title": "Unique IDentifier",
+              "type": "string"
+            },
+            "ref": {
+              "description": "Unique Registration for Party",
+              "title": "Registration",
+              "type": "string"
+            },
+            "type":{
+              "description": "type of Registration",
+              "title": "Type",
+              "type":"string"
+            },
+            "status": {
+              "description": "The status of the Registration",
+              "title": "The status of the Registration",
+              "type": "string"
+            },
+            "created": {
+              "description": "Registration created date - (DOB, date of incorproration)",
+              "title": "Party created date",
+              "type": "string",
+              "format": "date"
+            },
+            "terminated": {
+              "description": "Registration terminated date",
+              "title": "Registration terminated date",
+              "type": "string",
+              "format": "date"
+            },
+            "name": {
+              "description": "The Party name as per Registration",
+              "title": "The Party name as per Registration",
+              "type": "string"
+            },
+            "nationality": {
+              "type": "string",
+              "title": "The ISO-3166 Alpha-2 code Country code of nationality"
+            },
+            "sources": {
+              "type": "array",
+              "title": "Data sources",
+              "description": "The sources reference of the data",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ref": {
+                    "description": "source reference from sources dictionary",
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "dateTime",
+                    "description": "timestamp of the last refresh of data from source"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "additionalItems": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

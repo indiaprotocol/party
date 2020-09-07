@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/Party",
+  "definitions": {
+    "Party": {
+      "type": "object",
+      "title": "The Party schema",
+      "required": [
+        "party_id",
+        "ref",
+        "type",
+        "status",
+        "created",
+        "name",
+        "dba",
+        "nationality",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of party data",
+      "properties": {
+        "party_id": {
+          "description": "Unique IDentifier of Party",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "ref": {
+          "type": "string",
+          "title": "Unique ref",
+          "description": "unique ref for Party"
+        },
+        "type": {
+          "description": "Type of entity as defined in Party dictionary - ",
+          "title": "Type of Party",
+          "type": "string"
+        },
+        "status": {
+          "description": "The status of the Party",
+          "title": "The status of the Party",
+          "type": "string"
+        },
+        "created": {
+          "description": "Party created date - (DOB, date of incorproration)",
+          "title": "Party created date",
+          "type": "string",
+          "format": "date"
+        },
+        "name": {
+          "description": "The name of the Party",
+          "title": "The name of the Party",
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string",
+          "title": "The ISO-3166 Alpha-2 code Country code of nationality"
+        },
+        "sources": {
+          "type": "array",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
+          },
+          "additionalItems": true
+        }
+      }
+    }
+  }
+}

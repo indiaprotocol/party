@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://www.indiaprotocol.com/v1/party/PartyDocument.json",
+  "$ref": "#/definitions/Document",
+  "definitions": {
+    "Document": {
+      "type": "object",
+      "title": "The Document schema",
+      "required": [
+        "document_id",
+        "party_id",
+        "type",
+        "date",
+        "ref",
+        "name",
+        "category",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Document data for a Party",
+      "properties": {
+        "document_id": {
+          "description": "Unique IDentifier of Document",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "party_id": {
+          "description": "Unique IDentifier of Party",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of Document as defined in Document dictionary - ",
+          "title": "Type of Document",
+          "type": "string"
+        },
+        "date": {
+          "description": "Date of Document submission to source",
+          "title": "date",
+          "type": "string",
+          "format": "date"
+        },
+        "ref": {
+          "type": "string",
+          "title": "Unique ref",
+          "description": "ref for Document"
+        },
+        "category":{
+          "description": "Categoty of Document from source",
+          "title": "Category",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the Document",
+          "title": "The name of the Document",
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
+          },
+          "additionalItems": true
+        }
+      }
+    }
+  }
+}

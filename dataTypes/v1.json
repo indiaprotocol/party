@@ -1,110 +1,149 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/dataTypes",
   "definitions": {
     "money": {
       "type": "object",
-      "additionalProperties": false,
+      "title": "Money",
+      "required": [
+        "currency",
+        "value"
+      ],
       "properties": {
         "currency": {
           "default": "INR",
           "description": "ISO 4217 Currency code",
-          "example": "INR",
           "title": "Currency",
           "type": "string"
         },
         "value": {
           "description": "Amount in 2 precision float",
-          "example": 1000000000.01,
           "title": "Value",
           "type": "number",
-          "multipleOf": 0.01 
+          "multipleOf": 0.01
         }
       },
-      "required": [
-        "currency",
-        "value"
-      ],
-      "title": "Money"
-    },
-    "postalAddress": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "line1": {
-          "type": "string"
-        },
-        "line2": {
-          "type": "string"
-        },
-        "city": {
-          "type": "string"
-        },
-        "state": {
-          "type": "string"
-        },
-        "country": {
-          "type": "string"
-        },
-        "pinCode": {
-          "type": "integer"
-        }
-      },
-      "required": [],
-      "title": "Postal Address"
+      "additionalProperties": false
     },
     "geoCode": {
       "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "longitude": {
-          "default": null,
-          "description": "longitude",
-          "example": 18.20202,
-          "title": "longitude",
-          "type": "number"
-        },
-        "latitude": {
-          "default": null,
-          "description": "Latitude",
-          "example": 19.20202,
-          "title": "Latitude",
-          "type": "number"
-        }
-      },
       "required": [
         "lat",
         "lon"
       ],
-      "title": "Geo Code"
+      "title": "Geo Code",
+      "properties": {
+        "lat": {
+          "default": null,
+          "description": "Latitude",
+          "title": "Latitude",
+          "type": "number"
+        },
+        "lon": {
+          "default": null,
+          "description": "longitude",
+          "title": "longitude",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
     },
     "dateRange": {
       "type": "object",
-      "additionalProperties": false,
+      "title": "DateRange",
       "properties": {
         "start": {
           "description": "start Date of range",
-          "example": "2017-01-01",
           "title": "start",
-          "type": "date"
+          "type": "string",
+          "format": "date"
         },
         "end": {
           "description": "end Date of ranfe",
-          "example": "2018-01-01",
           "title": "end",
-          "type": "date"
+          "type": "string",
+          "format": "date"
         }
       },
-      "title": "DateRange"
+      "additionalProperties": false
     },
-    "nationality":{
-      "type": "string",
-      "title": "The ISO-3166 Alpha-2 code Country code of nationality",
+    "sources": {
+      "type": "array",
+      "title": "Data sources",
+      "description": "The sources reference of the data",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ref": {
+            "description": "source reference from sources dictionary",
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "dateTime",
+            "description": "timestamp of the last refresh of data from source"
+          }
+        },
+        "additionalProperties": false
+      },
+      "additionalItems": true
+    },
+    "facets": {
+      "description": "Faceted query for the query paramter",
+      "title": "Different dimensions of the data",
+      "type": "object",
       "additionalProperties": true,
-      "description": "The schema for exchange of party data",
-      "examples": [
-        "IN"
-      ]
+      "properties": {
+        "type": {
+          "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
+          "required": [
+            "doc_count_error_upper_bound",
+            "sum_other_doc_count",
+            "buckets"
+          ],
+          "title": "Type Distribution",
+          "type": "object",
+          "properties": {
+            "doc_count_error_upper_bound": {
+              "type": "integer",
+              "title": "The doc_count_error_upper_bound schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "sum_other_doc_count": {
+              "description": "Total number of documents for this facet",
+              "title": "Total number of documents",
+              "type": "integer"
+            },
+            "buckets": {
+              "default": [],
+              "description": "Results of facets query",
+              "title": "Facets result",
+              "type": "array",
+              "additionalItems": true,
+              "items": {
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "required": [
+                  "key",
+                  "doc_count"
+                ],
+                "properties": {
+                  "key": {
+                    "description": "key of the query facet",
+                    "title": "facet key",
+                    "type": "string"
+                  },
+                  "doc_count": {
+                    "type": "integer",
+                    "title": "The doc_count schema",
+                    "description": "An explanation about the purpose of this instance."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
