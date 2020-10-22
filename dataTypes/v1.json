@@ -144,6 +144,20 @@
           }
         }
       }
+    },
+    "party":{
+      "party_id": {
+        "type": "string"
+      },
+      "ref": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      }
     }
   }
 }

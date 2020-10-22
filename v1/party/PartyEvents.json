@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "#/definitions/Relationships",
+  "$ref": "#/definitions/Events",
   "definitions": {
-    "Relationships": {
+    "Events": {
       "type": "object",
       "properties": {
         "meta": {
@@ -35,7 +35,7 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyRelationship.json"
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyEvent.json"
           }
         }
       },

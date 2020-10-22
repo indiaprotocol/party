@@ -4,126 +4,45 @@
   "definitions": {
     "Documents": {
       "type": "object",
-      "title": "The Documents schema",
+      "properties": {
+        "meta": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "party_id": {
+              "type": "string"
+            },
+            "total_records": {
+              "type": "integer"
+            },
+            "page": {
+              "type": "integer"
+            },
+            "per_page": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "party_id",
+            "total_records",
+            "page",
+            "per_page"
+          ]
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyDocument.json"
+          }
+        }
+      },
       "required": [
         "meta",
         "data"
-      ],
-      "additionalProperties": false,
-      "description": "The schema for exchange of Documents data for a party",
-      "properties": {
-        "meta": {
-          "description": "Meta of Documents",
-          "title": "meta",
-          "type": "object",
-          "additionalProperties": true,
-          "required": [
-            "party_id",
-            "type",
-            "page",
-            "per_page"
-          ],
-          "properties": {
-            "type": {
-              "type": "string",
-              "description": "type of Documents"
-            },
-            "party_id": {
-              "type": "string",
-              "description": "party of Documents"
-            },
-            "page": {
-              "type": "integer",
-              "description": "page number of paginagted response"
-            },
-            "per_page": {
-              "type": "integer",
-              "description": "size of paginated response"
-            }
-          }
-        },
-        "data":{
-          "description": "Unique IDentifier of Party",
-          "title": "Unique IDentifier",
-          "type": "array",
-          "additionalItems": false,
-          "items": {
-            "type": "object",
-            "title": "The Document schema",
-            "required": [
-              "document_id",
-              "party_id",
-              "type",
-              "date",
-              "ref",
-              "name",
-              "category",
-              "sources"
-            ],
-            "additionalProperties": true,
-            "description": "The schema for exchange of Document data for a Party",
-            "properties": {
-              "document_id": {
-                "description": "Unique IDentifier of Document",
-                "title": "Unique IDentifier",
-                "type": "string"
-              },
-              "party_id": {
-                "description": "Unique IDentifier of Party",
-                "title": "Unique IDentifier",
-                "type": "string"
-              },
-              "type": {
-                "description": "Type of Document as defined in Document dictionary - ",
-                "title": "Type of Document",
-                "type": "string"
-              },
-              "date": {
-                "description": "Date of Document submission to source",
-                "title": "date",
-                "type": "string",
-                "format": "date"
-              },
-              "ref": {
-                "type": "string",
-                "title": "Unique ref",
-                "description": "ref for Document"
-              },
-              "category":{
-                "description": "Categoty of Document from source",
-                "title": "Category",
-                "type": "string"
-              },
-              "name": {
-                "description": "The name of the Document",
-                "title": "The name of the Document",
-                "type": "string"
-              },
-              "sources": {
-                "type": "array",
-                "title": "Data sources",
-                "description": "The sources reference of the data",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "ref": {
-                      "description": "source reference from sources dictionary",
-                      "type": "string"
-                    },
-                    "timestamp": {
-                      "type": "string",
-                      "format": "dateTime",
-                      "description": "timestamp of the last refresh of data from source"
-                    }
-                  },
-                  "additionalProperties": false
-                },
-                "additionalItems": true
-              }
-            }
-          }
-        }
-      }
+      ]
     }
   }
 }
