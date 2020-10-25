@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "Portfolios": {
+      "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "portfolio_id",
+            "organization_id"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "portfolio_id",
+            "name",
+            "type",
+            "organization",
+            "created_at",
+            "updated_at",
+            "party_count"
+          ],
+          "properties": {
+            "portfolio_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "object",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "party_count": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

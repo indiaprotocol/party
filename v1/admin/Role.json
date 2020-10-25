@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "Role": {
+      "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "role_id",
+            "organization_id"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "role_id",
+            "name",
+            "organization",
+            "created_at",
+            "updated_at",
+            "user_count",
+            "policies"
+          ],
+          "properties": {
+            "role_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "object",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "user_count": {
+              "type": "integer"
+            },
+            "policies": {
+              "type": "array",
+              "additionalItems": true,
+              "items": {
+                "type": "object",
+                "required": [
+                  "policy_id",
+                  "name"
+                ],
+                "properties": {
+                  "policy_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

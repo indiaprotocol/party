@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "Organization": {
+      "type": "object",
+      "title": "The Organization schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "organization_id"
+          ],
+          "properties": {
+            "organization_id": {
+              "type": "string",
+              "title": "The organization_id",
+              "description": "organization_id"
+            }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalItems": true,
+          "required": [
+            "organization_id",
+            "name",
+            "display_name",
+            "party_id",
+            "logo_url",
+            "status",
+            "ou_count",
+            "roles_count",
+            "groups_count",
+            "organization_manager",
+            "user_limit",
+            "expiry_date",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "organization_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "party_id": {
+              "type": "string"
+            },
+            "logo_url": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "ou_count": {
+              "type": "integer"
+            },
+            "roles_count": {
+              "type": "integer"
+            },
+            "groups_count": {
+              "type": "integer"
+            },
+            "organization_manager": {
+              "type": "object",
+              "required": [
+                "cw_id",
+                "name"
+              ],
+              "properties": {
+                "cw_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "user_limit": {
+              "type": "string"
+            },
+            "expiry_date": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "policy": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    }
+  }
+}

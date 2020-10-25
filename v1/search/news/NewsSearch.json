@@ -1,0 +1,278 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/NewsSearch",
+  "definitions": {
+    "NewsSearch": {
+      "type": "object",
+      "title": "The NewsSearch schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of NewsSearch results",
+      "properties": {
+        "meta": {
+          "description": "Meta of NewsSearch",
+          "title": "meta",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "name",
+            "co_litigants",
+            "courts",
+            "litigant_type",
+            "from",
+            "page",
+            "per_page",
+            "total_records",
+            "time_ms",
+            "facets"
+          ],
+          "properties": {
+            "name": {
+              "description": "name of litigant for court search",
+              "title": "Name",
+              "type": "string"
+            },
+            "litigant_type":{
+              "type": "string",
+              "description": "respondent or petitioner"
+            },
+            "co_litigants": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "4":{
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "description": "names of co_litigants corresponding to the key of the array block ('4')"
+                  }
+                }
+              }
+            },
+            "page": {
+              "type": "integer",
+              "description": "page number of paginagted response"
+            },
+            "per_page": {
+              "type": "integer",
+              "description": "size of paginated response"
+            },
+            "total_records": {
+              "description": "Total records present in for the search paramter",
+              "title": "Total number of records",
+              "type": "integer"
+            },
+            "time_ms": {
+              "description": "Time taken to return the results",
+              "title": "Response time",
+              "type": "number"
+            },
+            "from":{
+              "description": "Date from boudary for search",
+                "title": "from for filing date",
+                "type": "string",
+                "format": "date"
+            },
+            "facets": {
+              "description": "Faceted query for the query paramter",
+              "title": "Different dimensions of the data",
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "type": {
+                  "description": "Facet query on the type of the party distribution Ex: Private company, person, LLP, Public company etc..",
+                  "required": [
+                    "doc_count_error_upper_bound",
+                    "sum_other_doc_count",
+                    "buckets"
+                  ],
+                  "title": "Type Distribution",
+                  "type": "object",
+                  "properties": {
+                    "doc_count_error_upper_bound": {
+                      "type": "integer",
+                      "title": "The doc_count_error_upper_bound schema",
+                      "description": "An explanation about the purpose of this instance."
+                    },
+                    "sum_other_doc_count": {
+                      "description": "Total number of documents for this facet",
+                      "title": "Total number of documents",
+                      "type": "integer"
+                    },
+                    "buckets": {
+                      "default": [],
+                      "description": "Results of facets query",
+                      "title": "Facets result",
+                      "type": "array",
+                      "additionalItems": true,
+                      "items": {
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "required": [
+                          "key",
+                          "doc_count"
+                        ],
+                        "properties": {
+                          "key": {
+                            "description": "key of the query facet",
+                            "title": "facet key",
+                            "type": "string"
+                          },
+                          "doc_count": {
+                            "type": "integer",
+                            "title": "The doc_count schema",
+                            "description": "An explanation about the purpose of this instance."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "title": "The Court Case schema",
+      "required": [
+        "case_id",
+        "ref",
+        "court_type",
+        "case_type",
+        "act",
+        "section",
+        "status",
+        "created",
+        "petitioner",
+        "respondent",
+        "sources"
+      ],
+      "additionalProperties": true,
+      "description": "The schema for exchange of Court Case data",
+      "properties": {
+        "case_id": {
+          "description": "Unique IDentifier of Court Case",
+          "title": "Unique IDentifier",
+          "type": "string"
+        },
+        "ref": {
+          "type": "string",
+          "title": "Unique ref",
+          "description": "unique ref for Court Case"
+        },
+        "court_type": {
+          "description": "Type of Court where case is filed",
+          "title": "Type of Court",
+          "type": "string"
+        },
+        "case_type": {
+          "description": "Type of Case as defined in Court Case dictionary - ",
+          "title": "Type of Case",
+          "type": "string"
+        },
+        "act":{
+          "description": "Act under which Case is filed",
+          "title": "Act of Case",
+          "type": "string"
+        },
+        "section":{
+          "description": "Section under which Case is filed",
+          "title": "Section of Case",
+          "type": "string"
+        },
+        "status": {
+          "description": "The status of the Court Case",
+          "title": "The status of the Court Case",
+          "type": "string"
+        },
+        "created": {
+          "description": "Court Case filing date",
+          "title": "Court Case filing date",
+          "type": "string",
+          "format": "date"
+        },
+        "petitioner": {
+          "description": "The names of the Petitioners",
+          "title": "The names of the Petitioners",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "name of Petitioner",
+                "type": "string"
+              },
+              "advocate": {
+                "type": "string",
+                "description": "name of petitioner advocate"
+              },
+              "address": {
+                "type": "string",
+                "description": "Address of petitioner"
+              },
+              "relation_to":{
+                "type": "string",
+                "description": "Related person of petitioner"
+              }
+            }
+
+          }
+        },
+        "respondent":{
+          "description": "The names of the Respondents",
+          "title": "The names of the Respondents",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "name of Respondent",
+                "type": "string"
+              },
+              "advocate": {
+                "type": "string",
+                "description": "name of Respondent advocate"
+              },
+              "address": {
+                "type": "string",
+                "description": "Address of Respondent"
+              },
+              "relation_to":{
+                "type": "string",
+                "description": "Related person of Respondent"
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "title": "Data sources",
+          "description": "The sources reference of the data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "description": "source reference from sources dictionary",
+                "type": "string"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "dateTime",
+                "description": "timestamp of the last refresh of data from source"
+              }
+            },
+            "additionalProperties": false
+          },
+          "additionalItems": true
+        }
+      }
+    }
+  }
+}

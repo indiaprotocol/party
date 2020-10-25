@@ -1,0 +1,169 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "User": {
+      "type": "object",
+      "title": "The User schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "user_id",
+            "organization_id"
+          ],
+          "properties": {
+            "user_id": {
+              "type": "string"
+            },
+            "organization_id": {
+              "type": "string"
+            }
+          }
+        },
+        "data": {
+          "type": "object",
+          "additionalItems": true,
+          "required": [
+            "user_id",
+            "email",
+            "mobile_number",
+            "profile_pic",
+            "name",
+            "display_name",
+            "status",
+            "organization",
+            "organization_unit",
+            "roles",
+            "groups",
+            "providers",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "user_id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "mobile_number": {
+              "type": "string"
+            },
+            "profile_pic": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "object",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                }
+              }
+            },
+            "organization_unit": {
+              "type": "object",
+              "required": [
+                "ou_id",
+                "name"
+              ],
+              "properties": {
+                "ou_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "roles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "role_id",
+                  "name"
+                ],
+                "properties": {
+                  "role_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "groups": {
+              "type": "array",
+              "title": "The groups schema",
+              "items": {
+                "type": "object",
+                "title": "group",
+                "required": [
+                  "group_id",
+                  "name"
+                ],
+                "properties": {
+                  "group_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "providers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "provider",
+                  "uid"
+                ],
+                "properties": {
+                  "provider": {
+                    "type": "string"
+                  },
+                  "uid": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
