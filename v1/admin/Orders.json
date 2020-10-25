@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "Orders": {
+      "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "page",
+            "per_page",
+            "total_records",
+            "organization_id",
+            "sort"
+          ],
+          "optionals": [
+            "filters",
+            "q"
+          ],
+          "properties": {
+            "organization_id": {
+              "type": "string",
+              "title": "The organization_id",
+              "description": "organization_id"
+            },
+            "page": {
+              "type": "integer",
+              "title": "The page schema",
+              "description": "Page number of records"
+            },
+            "per_page": {
+              "type": "integer",
+              "title": "The per_page schema",
+              "description": "number of records per page"
+            },
+            "total_records": {
+              "type": "integer",
+              "title": "The total_records schema",
+              "description": "totla records for query"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {
+                "by": {
+                  "type": "string"
+                },
+                "in": {
+                  "type": "string"
+                }
+              }
+            },
+            "filters":{
+              "type": "object",
+              "properties": {
+                "type":{
+                  "type": "string"
+                },
+                "status":{
+                  "type": "string"
+                },
+                "owner":{
+                  "type": "string"
+                }
+              }
+            },
+            "q":{
+              "type": "string"
+            }
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "order_id",
+              "status",
+              "products_count",
+              "owner",
+              "organization",
+              "created_at",
+              "updated_at"
+            ],
+            "properties": {
+              "order_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "products_count": {
+                "type": "integer"
+              },
+              "owner": {
+                "type": "object",
+                "required": [
+                  "user_id",
+                  "name"
+                ],
+                "properties": {
+                  "user_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "organization": {
+                "type": "object",
+                "required": [
+                  "organization_id",
+                  "name",
+                  "display_name"
+                ],
+                "properties": {
+                  "organization_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "display_name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

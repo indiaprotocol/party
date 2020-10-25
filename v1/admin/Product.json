@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "product_id",
+            "organization_id"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "product_id",
+            "order_id",
+            "code",
+            "type",
+            "status",
+            "party",
+            "owner",
+            "organization",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "product_id": {
+              "type": "string"
+            },
+            "order_id": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "party": {
+              "type": "object",
+              "required": [
+                "party_id",
+                "name"
+              ],
+              "properties": {
+                "party_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "owner": {
+              "type": "object",
+              "required": [
+                "user_id",
+                "name"
+              ],
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "organization": {
+              "type": "object",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

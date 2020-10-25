@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "Groups": {
+      "type": "object",
+      "title": "The groups schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "page",
+            "per_page",
+            "total_records",
+            "organization_id"
+            "sort"
+          ],
+          "optionals": [
+            "q"
+          ],
+          "properties": {
+            "page": {
+              "type": "integer"
+            },
+            "per_page": {
+              "type": "integer"
+            },
+            "total_records": {
+              "type": "integer"
+            },
+            "organization_id": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {
+                "by": {
+                  "type": "string"
+                },
+                "in": {
+                  "type": "string"
+                }
+              }
+            },
+            "q":{
+              "type": "string"
+            }
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "group_id",
+              "name",
+              "organization",
+              "created_at",
+              "updated_at",
+              "user_count"
+            ],
+            "properties": {
+              "group_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "object",
+                "required": [
+                  "organization_id",
+                  "name",
+                  "display_name"
+                ],
+                "properties": {
+                  "organization_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "display_name": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "user_count": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

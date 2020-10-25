@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema#",
+  "definitions": {
+    "Users": {
+      "type": "object",
+      "title": "The User schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "page",
+            "per_page",
+            "total_records",
+            "organization_id",
+            "sort"
+          ],
+          "optionals": [
+            "filters",
+            "q"
+          ],
+          "properties": {
+            "organization_id": {
+              "type": "string",
+              "title": "The organization_id",
+              "description": "organization_id"
+            },
+            "page": {
+              "type": "integer",
+              "title": "The page schema",
+              "description": "Page number of records"
+            },
+            "per_page": {
+              "type": "integer",
+              "title": "The per_page schema",
+              "description": "number of records per page"
+            },
+            "total_records": {
+              "type": "integer",
+              "title": "The total_records schema",
+              "description": "totla records for query"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {
+                "by": {
+                  "type": "string"
+                },
+                "in": {
+                  "type": "string"
+                }
+              }
+            },
+            "filters": {
+              "type": "object",
+              "properties": {
+                "organization_units": {
+                  "type": "array"
+                },
+                "roles":{
+                  "type": "array"
+                },
+                "status":{
+                  "type": "string"
+                }
+              }
+            },
+            "q":{
+              "type": "string"
+            }
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalItems": true,
+            "required": [
+              "user_id",
+              "email",
+              "mobile_number",
+              "profile_pic",
+              "name",
+              "display_name",
+              "status",
+              "organization",
+              "organization_unit",
+              "roles",
+              "created_at",
+              "updated_at"
+            ],
+            "properties": {
+              "user_id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "mobile_number": {
+                "type": "string"
+              },
+              "profile_pic": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "object",
+                "required": [
+                  "organization_id",
+                  "name"
+                ],
+                "properties": {
+                  "organization_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "organization_unit": {
+                "type": "object",
+                "required": [
+                  "ou_id",
+                  "name"
+                ],
+                "properties": {
+                  "ou_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "roles": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "role_id",
+                    "name"
+                  ],
+                  "properties": {
+                    "role_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "additionalProperties": true
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
