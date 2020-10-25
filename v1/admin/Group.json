@@ -2,9 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
     "Group": {
-      "example": {
-        "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/v1/admin/examples/Group.json"
-      },
       "type": "object",
       "required": [
         "meta",
@@ -17,14 +14,23 @@
           "required": [
             "group_id",
             "organization_id"
-          ]
+          ],
+          "properties": {
+            "group_id": {
+              "type": "string",
+              "example" : "5f7eb976e6eb0d3d80f405ab"
+            },
+            "organization_id": {
+              "type": "string",
+              "example" : "596f65d71ca2e16fa43d7359"
+            }
+          }
         },
         "data": {
           "type": "object",
           "required": [
             "group_id",
             "name",
-            "status",
             "organization",
             "created_at",
             "updated_at",
@@ -32,13 +38,12 @@
           ],
           "properties": {
             "group_id": {
-              "type": "string"
+              "type": "string",
+              "example" : "5f7eb976e6eb0d3d80f405ab"
             },
             "name": {
-              "type": "string"
-            },
-            "status": {
-              "type": "string"
+              "type": "string",
+              "example" : "Group 1"
             },
             "organization": {
               "type": "object",
@@ -49,25 +54,33 @@
               ],
               "properties": {
                 "organization_id": {
-                  "type": "string"
+                  "type": "string",
+                  "example" : "596f65d71ca2e16fa43d7359"
                 },
                 "name": {
-                  "type": "string"
+                  "type": "string",
+                  "example" : "Crediwatch Information Analytics Private Limited"
                 },
                 "display_name": {
-                  "type": "string"
+                  "type": "string",
+                  "example" : "Crediwatch"
                 }
               },
               "additionalProperties": false
             },
             "created_at": {
-              "type": "string"
+              "type": "string",
+              "format": "dateTime",
+              "example" : "2020-08-06T16:08:42.453+00:00"
             },
             "updated_at": {
-              "type": "string"
+              "type": "string",
+              "format": "dateTime",
+              "example" : "2020-08-06T16:08:42.453+00:00"
             },
             "user_count": {
-              "type": "integer"
+              "type": "integer",
+              "example" : 10
             }
           },
           "additionalProperties": true
