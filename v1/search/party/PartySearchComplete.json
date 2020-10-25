@@ -1,5 +1,9 @@
 {
   "type" : "object",
+  "required": [
+    "meta",
+    "data"
+  ],
   "properties" : {
     "meta" : {
       "type" : "object",
@@ -14,32 +18,39 @@
       "type" : "array",
       "items" : {
         "type" : "object",
+        "required": [
+          "party_id",
+          "ref",
+          "type",
+          "name",
+          "status",
+          "created"
+        ],
         "properties" : {
-          "id" : {
+          "party_id" : {
             "type" : "string",
             "example" : "556277cf6d6f6f376276f50f"
+          },
+          "ref":{
+            "type" : "string",
+            "example" : "crediwatch-information-analytics-private-limited"
           },
           "type" : {
             "type" : "string",
             "example" : "private_company"
           },
-          "attributes" : {
-            "type" : "object",
-            "properties" : {
-              "name" : {
-                "type" : "string",
-                "example" : "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED"
-              },
-              "status" : {
-                "type" : "string",
-                "example" : "active"
-              },
-              "created" : {
-                "type" : "string",
-                "format" : "date",
-                "example" : "1999-12-15"
-              }
-            }
+          "name" : {
+            "type" : "string",
+            "example" : "CREDIWATCH INFORMATION ANALYTICS PRIVATE LIMITED"
+          },
+          "status" : {
+            "type" : "string",
+            "example" : "active"
+          },
+          "created" : {
+            "type" : "string",
+            "format" : "date",
+            "example" : "1999-12-15"
           }
         }
       }
