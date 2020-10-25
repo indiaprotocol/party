@@ -1,36 +1,39 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "#/definitions/Address",
+  "$ref": "#/definitions/Event",
   "definitions": {
-    "Address": {
+    "Event": {
       "type": "object",
+      "required": [
+        "event_id",
+        "party_id",
+        "type",
+        "date",
+        "ref",
+        "sources"
+      ],
+      "additionalProperties": true,
       "properties": {
-        "address_id": {
+        "event_id": {
           "type": "string"
         },
         "party_id": {
           "type": "string"
         },
-        "ref": {
-          "type": "string"
-        },
         "type": {
           "type": "string"
         },
-        "geocode": {
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#geoCode"
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "ref": {
+          "description": "ref for Document"
         },
         "sources": {
           "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#sources"
         }
-      },
-      "required": [
-        "address_id",
-        "party_id",
-        "ref",
-        "type",
-        "sources"
-      ]
+      }
     }
   }
 }

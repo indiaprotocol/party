@@ -4,78 +4,426 @@
   "definitions": {
     "Party": {
       "type": "object",
-      "title": "The Party schema",
-      "required": [
-        "party_id",
-        "ref",
-        "type",
-        "status",
-        "created",
-        "name",
-        "dba",
-        "nationality",
-        "sources"
-      ],
-      "additionalProperties": true,
-      "description": "The schema for exchange of party data",
       "properties": {
-        "party_id": {
-          "description": "Unique IDentifier of Party",
-          "title": "Unique IDentifier",
-          "type": "string"
+        "meta": {
+          "type": "object",
+          "properties": {
+            "ref": {
+              "type": "string"
+            },
+            "party_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ref",
+            "party_id",
+            "type",
+            "updated_at",
+            "description"
+          ]
         },
-        "ref": {
-          "type": "string",
-          "title": "Unique ref",
-          "description": "unique ref for Party"
-        },
-        "type": {
-          "description": "Type of entity as defined in Party dictionary - ",
-          "title": "Type of Party",
-          "type": "string"
-        },
-        "status": {
-          "description": "The status of the Party",
-          "title": "The status of the Party",
-          "type": "string"
-        },
-        "created": {
-          "description": "Party created date - (DOB, date of incorproration)",
-          "title": "Party created date",
-          "type": "string",
-          "format": "date"
-        },
-        "name": {
-          "description": "The name of the Party",
-          "title": "The name of the Party",
-          "type": "string"
-        },
-        "nationality": {
-          "type": "string",
-          "title": "The ISO-3166 Alpha-2 code Country code of nationality"
-        },
-        "sources": {
-          "type": "array",
-          "title": "Data sources",
-          "description": "The sources reference of the data",
-          "items": {
-            "type": "object",
-            "properties": {
-              "ref": {
-                "description": "source reference from sources dictionary",
-                "type": "string"
-              },
-              "timestamp": {
-                "type": "string",
-                "format": "dateTime",
-                "description": "timestamp of the last refresh of data from source"
+        "data": {
+          "type": "object",
+          "properties": {
+            "party_id": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "duration": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#dateRange"
+            },
+            "name": {
+              "type": "string"
+            },
+            "dba": {
+              "type": "array",
+              "items": {}
+            },
+            "nationality": {
+              "type": "string"
+            },
+            "paid_up_capital": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#money"
+            },
+            "authorized_capital": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#money"
+            },
+            "registered_address": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyAddress.json"
+            },
+            "addresses": {
+              "type": "object",
+              "properties": {
+                "postal_address": {
+                  "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyAddresses.json"
+                },
+                "website": {
+                  "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyAddresses.json"
+                },
+                "telephone": {
+                  "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyAddresses.json"
+                }
               }
             },
-            "additionalProperties": false
+            "registrations": {
+              "type": "object",
+              "properties": {
+                "gstn": {
+                  "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyRegistrations.json"
+                },
+                "permanent_account_number": {
+                  "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyRegistrations.json"
+                }
+              }
+            },
+            "relationships": {
+              "type": "object",
+              "properties": {
+                "auditor": {
+                  "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyRelationships.json"
+                }
+              }
+            },
+            "information": {
+              "type": "object",
+              "properties": {
+                "charges": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "party_id": {
+                          "type": "string"
+                        },
+                        "page": {
+                          "type": "integer"
+                        },
+                        "per_page": {
+                          "type": "integer"
+                        },
+                        "total_records": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "party_id",
+                        "page",
+                        "per_page",
+                        "total_records"
+                      ]
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "information_id": {
+                              "type": "string"
+                            },
+                            "party_id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "ref": {
+                              "type": "string"
+                            },
+                            "created": {
+                              "type": "string"
+                            },
+                            "sources": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "ref": {
+                                      "type": "string"
+                                    },
+                                    "timestamp": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "ref",
+                                    "timestamp"
+                                  ]
+                                }
+                              ]
+                            },
+                            "amount": {
+                              "type": "string"
+                            },
+                            "charge_holder": {
+                              "type": "string"
+                            },
+                            "terminated": {
+                              "type": "null"
+                            },
+                            "modify": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "information_id",
+                            "party_id",
+                            "type",
+                            "ref",
+                            "created",
+                            "sources",
+                            "amount",
+                            "charge_holder",
+                            "terminated",
+                            "modify"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "information_id": {
+                              "type": "string"
+                            },
+                            "party_id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "ref": {
+                              "type": "string"
+                            },
+                            "created": {
+                              "type": "string"
+                            },
+                            "sources": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "ref": {
+                                      "type": "string"
+                                    },
+                                    "timestamp": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "ref",
+                                    "timestamp"
+                                  ]
+                                }
+                              ]
+                            },
+                            "amount": {
+                              "type": "string"
+                            },
+                            "charge_holder": {
+                              "type": "string"
+                            },
+                            "terminated": {
+                              "type": "null"
+                            },
+                            "modify": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "information_id",
+                            "party_id",
+                            "type",
+                            "ref",
+                            "created",
+                            "sources",
+                            "amount",
+                            "charge_holder",
+                            "terminated",
+                            "modify"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "information_id": {
+                              "type": "string"
+                            },
+                            "party_id": {
+                              "type": "string"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "ref": {
+                              "type": "string"
+                            },
+                            "created": {
+                              "type": "string"
+                            },
+                            "sources": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "ref": {
+                                      "type": "string"
+                                    },
+                                    "timestamp": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "ref",
+                                    "timestamp"
+                                  ]
+                                }
+                              ]
+                            },
+                            "amount": {
+                              "type": "string"
+                            },
+                            "charge_holder": {
+                              "type": "string"
+                            },
+                            "terminated": {
+                              "type": "null"
+                            },
+                            "modify": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "information_id",
+                            "party_id",
+                            "type",
+                            "ref",
+                            "created",
+                            "sources",
+                            "amount",
+                            "charge_holder",
+                            "terminated",
+                            "modify"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "meta",
+                    "data"
+                  ]
+                }
+              },
+              "required": [
+                "charges"
+              ]
+            },
+            "indicators": {
+              "type": "object",
+              "properties": {
+                "registrations": {
+                  "type": "object",
+                  "properties": {
+                    "employee_provident_fund": {
+                      "type": "object",
+                      "properties": {
+                        "meta": {
+                          "type": "object",
+                          "properties": {
+                            "total_records": {
+                              "type": "integer"
+                            },
+                            "party_id": {
+                              "type": "string"
+                            },
+                            "page": {
+                              "type": "integer"
+                            },
+                            "per_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "total_records",
+                            "party_id",
+                            "page",
+                            "per_page"
+                          ]
+                        },
+                        "data": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "range": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "range"
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "meta",
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "employee_provident_fund"
+                  ]
+                }
+              },
+              "required": [
+                "registrations"
+              ]
+            },
+            "sources": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#sources"
+            }
           },
-          "additionalItems": true
+          "required": [
+            "party_id",
+            "ref",
+            "type",
+            "status",
+            "duration",
+            "name",
+            "registered_address",
+            "dba",
+            "nationality"
+          ]
         }
-      }
+      },
+      "required": [
+        "meta",
+        "data"
+      ]
     }
   }
 }
