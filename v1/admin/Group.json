@@ -3,7 +3,7 @@
   "definitions": {
     "Group": {
       "example": {
-        "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/admin/examples/Group.json"
+        "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/development/v1/admin/examples/Group.json"
       },
       "type": "object",
       "required": [
