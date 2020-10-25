@@ -2,6 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "definitions": {
     "Group": {
+      "example": {
+        "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/admin/examples/Group.json"
+      },
       "type": "object",
       "required": [
         "meta",
