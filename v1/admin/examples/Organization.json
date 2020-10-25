@@ -1,0 +1,24 @@
+{
+  "meta":{
+    "organization_id": "5f8f1c3239fc88542aca9fc8"
+  },
+  "data": {
+    "organization_id": "5f8f1c3239fc88542aca9fc8",
+    "name": "Crediwatch Information Analytics Private Limited",
+    "display_name": "Crediwatch",
+    "party_id": "5f8f1bd039fc88542aca9fc6",
+    "logo_url": null,
+    "status": "active",
+    "ou_count": 5,
+    "roles_count": 10,
+    "groups_count": 10,
+    "organization_manager": {
+      "cw_id": "5f8f1c2439fc88542aca9fc7",
+      "name": "Rajesh Hasan"
+    },
+    "user_limit": "100",
+    "expiry_date": "26-Sep-2030",
+    "created_at": "26-Sep-2020",
+    "updated_at": "29-Sep-2020"
+  }
+}

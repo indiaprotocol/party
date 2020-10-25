@@ -1,0 +1,19 @@
+{
+  "meta":{
+    "group_id": "5f7eb976e6eb0d3d80f405ab",
+    "organization_id": "596f65d71ca2e16fa43d7359"
+  },
+  "data":{
+    "group_id": "5f7eb976e6eb0d3d80f405ab",
+    "name": "Group 1",
+    "status": "active",
+    "organization": {
+      "organization_id": "596f65d71ca2e16fa43d7359",
+      "name": "Crediwatch Information Analytics Private Limited",
+      "display_name": "Crediwatch"
+    },
+    "created_at": "26-Sep-2016",
+    "updated_at": "29-Sep-2020",
+    "user_count": 10
+  }
+}

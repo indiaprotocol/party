@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "policy_id": "5f8f077039fc88542aca9fc1",
+    "organization_id": "596f65d71ca2e16fa43d7359"
+  },
+  "data": {
+    "policy_id": "5f8f077039fc88542aca9fc1",
+    "name": "Policy Test Set1",
+    "roles": [
+      {
+        "role_id": "5ef2f67d1ede4e5cdbe6ca2c",
+        "name": "Admin"
+      }
+    ],
+    "permissions": [
+      {
+        "permission_id": "5f8f235939fc88542aca9fcb",
+        "subject_class": "Users",
+        "action": "create",
+        "application": "Users"
+      }
+    ],
+    "created_at": "26-Sep-2020",
+    "updated_at": "29-Sep-2020"
+  },
+}

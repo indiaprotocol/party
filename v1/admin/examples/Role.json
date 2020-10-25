@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "role_id": "5f8fc36f39fc88542aca9fd1",
+    "organization_id": "596f65d71ca2e16fa43d7359"
+  },
+  "data": {
+    "role_id": "5f8fc36f39fc88542aca9fd1",
+    "name": "Admin",
+    "organization": {
+      "organization_id": "596f65d71ca2e16fa43d7359",
+      "name": "Crediwatch Information Analytics Private Limited",
+      "display_name": "Crediwatch"
+    },
+    "created_at": "26-Sep-2020",
+    "updated_at": "29-Sep-2020",
+    "user_count": 10,
+    "policies": [
+      {
+        "policy_id": "5f8fc3b639fc88542aca9fd2",
+        "name": "Test Policy"
+      }
+    ]
+  }
+}

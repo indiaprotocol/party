@@ -1,0 +1,179 @@
+"session_lakljsalkjsalkjs" =>
+{
+  "meta": {},
+  "data": {
+    "user_id": "5f7d468c0598137203ee285a",
+    "uid": "lakljsalkjsalkjs",
+    "host": "api.crediwatch.com",
+    "organization": {
+      "organization_id": "5ab3556ed1d8a9da3c3ee6c9",
+      "logo_url": "",
+      "name": "Avendus",
+      "display_name": null
+    },
+    "email": "user@crediwatch.com",
+    "profile_pic": "https://lh3.googleusercontent.com/-n759g5GINAM/AAAAAAAAAAI/AAAAAAAAAAA/ulxbtVnS810/photo.jpg",
+    "name": "crediwatch User",
+    "display_name": "User",
+    "status": "active",
+    "user_config": {
+      "allowed_model_types": [],
+      "on_board": true
+    },
+    "created_at": "07-Oct-2020",
+    "updated_at": "07-Oct-2020",
+    "policy": {
+
+      "/search/party": {
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/search/party/complete": {
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/search/news": {
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/search/court": {
+        "method": ["GET","POST"],
+        "resources": {}  
+      },
+
+      "/party/{party_id}":{
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/party/{party_id}/relationships": {
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/party/{party_id}/information": {
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/party/{party_id}/addresses": {
+        "method": ["GET"],
+        "resources": {}
+      },
+      "/party/{party_id}/registrations": {
+        "method": ["GET"],
+        "resources": {}
+      },
+
+      "/admin/organization": {
+        "method": ["GET","PUT"],
+        "resources": {}  
+      },
+
+      "/admin/users": {
+        "method": ["GET","POST"],
+        "resources": {}  
+      },
+      "/admin/users/myprofile": {
+        "method": ["GET","PUT","PATCH"],
+        "resources": {}  
+      },
+      "/admin/users/{user_id}": {
+        "method": ["GET","PUT","PATCH","DELETE"],
+        "resources": {}  
+      },
+      "/admin/users/{user_id}/enable": {
+        "method": ["GET"],
+        "resources": {}  
+      },
+      "/admin/users/{user_id}/disable": {
+        "method": ["GET"],
+        "resources": {}  
+      },
+
+      "/admin/roles": {
+        "method": ["GET", "POST"],
+        "resources": {}  
+      },
+      "/admin/roles/{role_id}":{
+        "method": ["GET","PUT","PATCH","DELETE"],
+        "resources": {}  
+      },
+      "/admin/roles/{role_id}/users":{
+        "method": ["GET"],
+        "resources": {}  
+      },
+      "/admin/roles/{role_id}/users/{user_id}":{
+        "method": ["PUT","PATCH"],
+        "resources": {}  
+      },
+
+      "/admin/groups": {
+        "method": ["GET", "POST"],
+        "resources": {}  
+      },
+      "/admin/groups/{group_id}":{
+        "method": ["GET","PUT","PATCH","DELETE"],
+        "resources": {}  
+      },
+      "/admin/groups/{group_id}/users":{
+        "method": ["GET"],
+        "resources": {}  
+      },
+      "/admin/groups/{group_id}/users/{user_id}":{
+        "method": ["PUT","PATCH"],
+        "resources": {}  
+      },
+
+
+      "/admin/org-units": {
+        "method": ["GET", "POST"],
+        "resources": {}  
+      },
+      "/admin/org-units/{ou_id}":{
+        "method": ["GET","PUT","PATCH","DELETE"],
+        "resources": {}  
+      },
+      "/admin/org-units/{ou_id}/users":{
+        "method": ["GET"],
+        "resources": {}  
+      },
+      "/admin/org-units/{ou_id}/users/{user_id}":{
+        "method": ["PUT","PATCH"],
+        "resources": {}  
+      },
+    
+      "/admin/parties": {
+        "method": ["GET", "POST"],
+        "resources": {}  
+      },
+      "/admin/parties/{party_id}": {
+        "method": ["GET", "PUT", "PATCH"],
+        "resources": {}  
+      },
+      "/admin/parties/upload": {
+        "method": [ "POST"],
+        "resources": {}  
+      },
+      
+      "/admin/policies": {
+        "method": ["GET"],
+        "resources": {}  
+      },
+      "/admin/policies/{policy_id}": {
+        "method": ["GET"],
+        "resources": {}  
+      },
+
+      "/admin/portfolios": {
+        "method": ["GET", "POST"],
+        "resources": {}  
+      },
+      "/admin/portfolios/{portfolio_id}":{
+        "method": ["GET","PUT","PATCH","DELETE"],
+        "resources": {}  
+      },
+      "/admin/portfolios/{portfolio_id}/parties/{party_id}":{
+        "method": ["PUT","PATCH"],
+        "resources": {}  
+      }
+    }
+  }
+}
