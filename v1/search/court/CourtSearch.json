@@ -74,7 +74,8 @@
               "description": "Date from boudary for search",
                 "title": "from for filing date",
                 "type": "string",
-                "format": "date"
+                "format": "date",
+                "example" : "2016-09-27"
             },
             "facets": {
               "description": "Faceted query for the query paramter",
@@ -196,7 +197,8 @@
           "description": "Court Case filing date",
           "title": "Court Case filing date",
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "example" : "2016-09-27"
         },
         "petitioner": {
           "description": "The names of the Petitioners",
@@ -265,7 +267,8 @@
               "timestamp": {
                 "type": "string",
                 "format": "dateTime",
-                "description": "timestamp of the last refresh of data from source"
+                "description": "timestamp of the last refresh of data from source",
+                "example" : "2020-08-06T16:08:42.453+00:00"
               }
             },
             "additionalProperties": false
