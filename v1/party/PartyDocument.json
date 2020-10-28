@@ -27,7 +27,8 @@
         },
         "date": {
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "example" : "2016-09-27"
         },
         "ref": {
           "description": "ref for Document"

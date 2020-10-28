@@ -75,7 +75,8 @@
               "description": "Information created date",
               "title": "Information created date",
               "type": "string",
-              "format": "date"
+              "format": "date",
+              "example" : "2016-09-27"
             },
             "sources": {
               "type": "array",
@@ -91,7 +92,8 @@
                   "timestamp": {
                     "type": "string",
                     "format": "dateTime",
-                    "description": "timestamp of the last refresh of data from source"
+                    "description": "timestamp of the last refresh of data from source",
+                    "example" : "2020-08-06T16:08:42.453+00:00"
                   }
                 },
                 "additionalProperties": false

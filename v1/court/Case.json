@@ -60,7 +60,8 @@
           "description": "Court Case filing date",
           "title": "Court Case filing date",
           "type": "string",
-          "format": "date"
+          "format": "date",
+          "example" : "2016-09-27"
         },
         "petitioner": {
           "description": "The names of the Petitioners",
