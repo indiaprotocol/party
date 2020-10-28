@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/PartyUCI",
+  "definitions": {
+    "PartyUCI": {
+      "type": "object",
+      "title": "The PartySearch schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of PartyUCI results",
+      "properties": {
+        "meta": {
+          "description": "Meta of PartyUCI",
+          "title": "meta",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "q",
+            "process_id",
+            "time_ms"
+          ],
+          "properties": {
+            "q": {
+              "description": "Name for party UCI",
+              "title": "Query paramter",
+              "type": "string",
+              "example": "Crediwatch"
+            },
+            "process_id": {
+              "description": "Process ID of job",
+              "title": "Process ID",
+              "type": "string",
+              "example": "5f985a990aa73d3ee6e8aebe"
+            },
+            "time_ms": {
+              "description": "Time taken to return the results in ms",
+              "title": "Response time in ms",
+              "type": "number",
+              "example": 1.34
+            }
+          }
+        },
+        "data": {
+          "description": "The schema for UCI data",
+          "title": "Party PartyUCI result",
+          "type": "object",
+          "required": [
+            "probability",
+            "party_ids"
+          ],
+          "properties": {
+            "probability": {
+              "type": "number",
+              "example": 0.0
+            },
+            "party_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "example": "556277cf6d6f6f376276f50f"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

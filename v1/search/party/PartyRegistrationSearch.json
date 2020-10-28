@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/PartyRegistrationSearch",
+  "definitions": {
+    "PartyRegistrationSearch": {
+      "type": "object",
+      "title": "The PartyRegistrationSearch schema",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of PartyRegistrationSearch results",
+      "properties": {
+        "meta": {
+          "description": "Meta of PartyRegistrationSearch",
+          "title": "meta",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "q",
+            "process_id",
+            "time_ms"
+          ],
+          "properties": {
+            "q": {
+              "description": "Name for party UCI",
+              "title": "Query paramter",
+              "type": "string",
+              "example": "Crediwatch"
+            },
+            "process_id": {
+              "description": "Process ID of job",
+              "title": "Process ID",
+              "type": "string",
+              "example": "5f985a990aa73d3ee6e8aebe"
+            },
+            "time_ms": {
+              "description": "Time taken to return the results in ms",
+              "title": "Response time in ms",
+              "type": "number",
+              "example": 1.34
+            }
+          }
+        },
+        "data": {
+          "description": "The schema for UCI data",
+          "title": "Party PartyUCI result",
+          "type": "object",
+          "required": [
+            "party_id",
+            "is_unique",
+            "model_type"
+          ],
+          "properties": {
+            "party_id": {
+              "description": "Unique IDentifier of Party",
+              "title": "Unique IDentifier",
+              "type": "string",
+              "example": "556277cf6d6f6f376276f50f"
+            },
+            "is_unique": {
+              "type": "string",
+              "example": "true"
+            },
+            "model_type": {
+              "type": "string",
+              "example": "permanent_account_number"
+            }
+          }
+        }
+      }
+    }
+  }
+}
