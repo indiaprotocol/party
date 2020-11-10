@@ -71,8 +71,7 @@
               "status",
               "created",
               "name",
-              "nationality",
-              "sources"
+              "nationality"
             ],
             "optional": [
               "authorized_capital",
@@ -125,29 +124,6 @@
                 "type": "string",
                 "title": "The ISO-3166 Alpha-2 code Country code of nationality",
                 "example" : "IN"
-              },
-              "sources": {
-                "type": "array",
-                "title": "Data sources",
-                "description": "The sources reference of the data",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "ref": {
-                      "description": "source reference from sources dictionary",
-                      "type": "string",
-                      "example" : "in-gov-mca"
-                    },
-                    "timestamp": {
-                      "type": "string",
-                      "format": "dateTime",
-                      "description": "timestamp of the last refresh of data from source",
-                      "example" : "2020-08-06T16:08:42.453+00:00"
-                    }
-                  },
-                  "additionalProperties": false
-                },
-                "additionalItems": true
               }
             }
           }
