@@ -67,6 +67,7 @@
             "party_id",
             "ref",
             "name",
+            "display_name",
             "type",
             "organization",
             "created_at",
@@ -84,6 +85,9 @@
               "type": "string"
             },
             "name": {
+              "type": "string"
+            },
+            "display_name": {
               "type": "string"
             },
             "type": {
