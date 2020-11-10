@@ -16,7 +16,7 @@
             "page",
             "per_page",
             "total_records",
-            "organization_id"
+            "organization_id",
             "sort"
           ],
           "optionals": [

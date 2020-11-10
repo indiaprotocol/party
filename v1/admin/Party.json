@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/Party",
+  "definitions": {
+    "Party": {
+      "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "object",
+          "required": [
+            "uuid",
+            "party_id",
+            "organization_id"
+          ]
+        },
+        "data": {
+          "type": "object",
+          "required": [
+            "party_id",
+            "ref",
+            "name",
+            "type",
+            "organization",
+            "created_at",
+            "updated_at",
+            "owner",
+            "tags",
+            "registrations",
+            "portfolios"
+          ],
+          "properties": {
+            "party_id": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "organization": {
+              "type": "object",
+              "required": [
+                "organization_id",
+                "name",
+                "display_name"
+              ],
+              "properties": {
+                "organization_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "object",
+              "required": [
+                "user_id",
+                "name"
+              ],
+              "properties": {
+                "user_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "tag_id",
+                  "context",
+                  "value"
+                ],
+                "properties": {
+                  "tag_id": {
+                    "type": "string"
+                  },
+                  "context": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "registrations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "type",
+                  "ref"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "ref": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "portfolios": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "portfolio_id",
+                  "name"
+                ],
+                "properties": {
+                  "portfolio_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
