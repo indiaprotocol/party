@@ -4,6 +4,10 @@
   "definitions": {
     "Documents": {
       "type": "object",
+      "required": [
+        "meta",
+        "data"
+      ],
       "properties": {
         "meta": {
           "type": "object",
@@ -35,14 +39,52 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyDocument.json"
+            "type": "object",
+            "required": [
+              "document_id",
+              "party_id",
+              "type",
+              "date",
+              "ref",
+              "name",
+              "category",
+              "sources"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "document_id": {
+                "type": "string"
+              },
+              "party_id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date",
+                "example": "2016-09-27"
+              },
+              "ref": {
+                "description": "ref for Document"
+              },
+              "category": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "sources": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/sources"
+              },
+              "information": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyInformations.json"
+              }
+            }
           }
         }
-      },
-      "required": [
-        "meta",
-        "data"
-      ]
+      }
     }
   }
 }
