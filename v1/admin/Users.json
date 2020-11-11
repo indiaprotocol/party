@@ -16,11 +16,11 @@
             "page",
             "per_page",
             "total_records",
-            "organization_id",
-            "sort"
+            "organization_id"
           ],
           "optionals": [
             "filters",
+            "sort",
             "q"
           ],
           "properties": {
@@ -88,10 +88,13 @@
               "display_name",
               "status",
               "organization",
-              "organization_unit",
               "roles",
               "created_at",
               "updated_at"
+            ],
+            "optional":[
+              "organization_unit",
+              "sort"
             ],
             "properties": {
               "user_id": {

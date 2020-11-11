@@ -35,7 +35,50 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyInformation.json"
+            "type": "object",
+            "title": "The Information schema",
+            "required": [
+              "information_id",
+              "party_id",
+              "ref",
+              "type",
+              "created",
+              "sources"
+            ],
+            "additionalProperties": true,
+            "description": "The schema for exchange of Information data for a Party",
+            "properties": {
+              "information_id": {
+                "description": "Object ID of Information",
+                "title": "Object ID",
+                "type": "string"
+              },
+              "party_id": {
+                "description": "Unique IDentifier of Party",
+                "title": "Unique IDentifier",
+                "type": "string"
+              },
+              "ref": {
+                "description": "reference Information for Party",
+                "title": "Information",
+                "type": "string"
+              },
+              "type": {
+                "description": "type of Information",
+                "title": "Type",
+                "type": "string"
+              },
+              "created": {
+                "description": "Information created date",
+                "title": "Information created date",
+                "type": "string",
+                "format": "date",
+                "example": "2016-09-27"
+              },
+              "sources": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/sources"
+              }
+            }
           }
         }
       },

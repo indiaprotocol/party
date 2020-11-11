@@ -15,10 +15,10 @@
             "page",
             "per_page",
             "total_records",
-            "organization_id",
-            "sort"
+            "organization_id"
           ],
           "optionals": [
+            "sort",
             "filters",
             "q"
           ],
@@ -123,13 +123,24 @@
               "type": "object",
               "required": [
                 "user_id",
+                "email",
                 "name"
+              ],
+              "optional": [
+                "trudesk_id"
               ],
               "properties": {
                 "user_id": {
                   "type": "string"
                 },
                 "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "trudesk_id": {
                   "type": "string"
                 }
               }
