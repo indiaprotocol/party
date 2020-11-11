@@ -48,7 +48,7 @@
               "type": "string"
             },
             "duration": {
-              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#dateRange"
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#/definitions/dateRange"
             },
             "name": {
               "type": "string"
@@ -61,10 +61,10 @@
               "type": "string"
             },
             "paid_up_capital": {
-              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#money"
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#/definitions/money"
             },
             "authorized_capital": {
-              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#money"
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#/definitions/money"
             },
             "registered_address": {
               "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyAddress.json"
