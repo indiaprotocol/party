@@ -175,7 +175,7 @@
               ]
             },
             "sources": {
-              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#sources"
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definit
             }
           },
           "required": [
