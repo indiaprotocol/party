@@ -4,33 +4,70 @@
   "definitions": {
     "Address": {
       "type": "object",
-      "properties": {
-        "address_id": {
-          "type": "string"
-        },
-        "party_id": {
-          "type": "string"
-        },
-        "ref": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "geocode": {
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#geoCode"
-        },
-        "sources": {
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#sources"
-        }
-      },
+      "title": "The Address schema",
       "required": [
-        "address_id",
-        "party_id",
-        "ref",
-        "type",
-        "sources"
-      ]
+        "meta",
+        "data"
+      ],
+      "additionalProperties": false,
+      "description": "The schema for exchange of Address data for a party",
+      "properties": {
+        "meta": {
+          "description": "Meta of Address",
+          "title": "meta",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "party_id",
+            "type",
+            "address_id"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "type of Address"
+            },
+            "party_id": {
+              "type": "string",
+              "description": "party of Address"
+            },
+            "address_id": {
+              "type": "string",
+              "description": "id of Address"
+            }
+          }
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "address_id": {
+              "type": "string"
+            },
+            "party_id": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "geocode": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/geoCode"
+            },
+            "sources": {
+              "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/sources"
+            }
+          },
+          "required": [
+            "address_id",
+            "party_id",
+            "ref",
+            "type",
+            "sources"
+          ]
+        }
+      }
     }
   }
 }

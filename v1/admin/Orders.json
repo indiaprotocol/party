@@ -16,10 +16,10 @@
             "page",
             "per_page",
             "total_records",
-            "organization_id",
-            "sort"
+            "organization_id"
           ],
           "optionals": [
+            "sort",
             "filters",
             "q"
           ],

@@ -98,7 +98,7 @@
               }
             },
             "user_limit": {
-              "type": "string",
+              "type": "integer",
               "example": 10
             },
             "expiry_date": {

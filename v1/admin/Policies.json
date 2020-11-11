@@ -14,10 +14,10 @@
           "required": [
             "page",
             "per_page",
-            "total_records",
-            "sort"
+            "total_records"
           ],
           "optionals": [
+            "sort",
             "q"
           ],
           "properties": {
@@ -53,7 +53,7 @@
             "required": [
               "policy_id",
               "name",
-              "role_count",
+              "roles_count",
               "permission_count",
               "created_at",
               "updated_at"
@@ -65,7 +65,7 @@
               "name": {
                 "type": "string"
               },
-              "role_count": {
+              "roles_count": {
                 "type": "integer"
               },
               "permission_count": {

@@ -35,7 +35,34 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyAddress.json"
+            "type": "object",
+            "properties": {
+              "address_id": {
+                "type": "string"
+              },
+              "party_id": {
+                "type": "string"
+              },
+              "ref": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "geocode": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/geoCode"
+              },
+              "sources": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/sources"
+              }
+            },
+            "required": [
+              "address_id",
+              "party_id",
+              "ref",
+              "type",
+              "sources"
+            ]
           }
         }
       },

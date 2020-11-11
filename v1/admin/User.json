@@ -37,12 +37,14 @@
             "display_name",
             "status",
             "organization",
-            "organization_unit",
-            "roles",
             "groups",
+            "roles",
             "providers",
             "created_at",
             "updated_at"
+          ],
+          "optional":[
+            "organization_unit"
           ],
           "properties": {
             "user_id": {
