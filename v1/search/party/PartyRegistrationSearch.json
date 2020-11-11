@@ -44,28 +44,57 @@
           }
         },
         "data": {
+          "type": "array",
           "description": "The schema for UCI data",
           "title": "Party PartyUCI result",
-          "type": "object",
-          "required": [
-            "party_id",
-            "is_unique",
-            "model_type"
-          ],
-          "properties": {
-            "party_id": {
-              "description": "Unique IDentifier of Party",
-              "title": "Unique IDentifier",
-              "type": "string",
-              "example": "556277cf6d6f6f376276f50f"
-            },
-            "is_unique": {
-              "type": "string",
-              "example": "true"
-            },
-            "model_type": {
-              "type": "string",
-              "example": "permanent_account_number"
+          "items": {
+            "type": "object",
+            "required": [
+              "party",
+              "type",
+              "registration_id"            
+            ],
+            "properties": {
+              "type":{
+                "type": "string",
+                "example": "permanent_account_number"
+              },
+              "registration_id":{
+                "type": "string",
+                "example": "123456"
+              },
+              "party": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "party_id",
+                  "type",
+                  "dba"
+                ],
+                "properties": {
+                  "name":{
+                    "type": "string",
+                    "example": "Crediwatch"
+                  },
+                  "party_id": {
+                    "description": "Unique IDentifier of Party",
+                    "title": "Unique IDentifier",
+                    "type": "string",
+                    "example": "556277cf6d6f6f376276f50f"
+                  },
+                  "dba": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": "crediwatch"
+                    }
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "private_company"
+                  }
+                }
+              }
             }
           }
         }
