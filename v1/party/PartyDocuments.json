@@ -67,6 +67,7 @@
                 "example": "2016-09-27"
               },
               "ref": {
+                "type": "string",
                 "description": "ref for Document"
               },
               "category": {
