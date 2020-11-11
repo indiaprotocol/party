@@ -35,7 +35,50 @@
         "data": {
           "type": "array",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyRegistration.json"
+            "type": "object",
+            "properties": {
+              "registration_id": {
+                "type": "string"
+              },
+              "party_id": {
+                "type": "string"
+              },
+              "ref": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "duration": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/dateRange"
+              },
+              "name": {
+                "type": "string"
+              },
+              "nationality": {
+                "type": "string"
+              },
+              "sources": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/sources"
+              },
+              "information": {
+                "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/party/PartyInformations.json"
+              }
+            },
+            "required": [
+              "registration_id",
+              "party_id",
+              "ref",
+              "type",
+              "status",
+              "duration",
+              "name",
+              "nationality",
+              "sources"
+            ]
           }
         }
       },
