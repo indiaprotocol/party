@@ -24,7 +24,7 @@
           ],
           "properties": {
             "q": {
-              "description": "Name for party UCI",
+              "description": "Registration string",
               "title": "Query paramter",
               "type": "string",
               "example": "Crediwatch"
@@ -45,8 +45,9 @@
         },
         "data": {
           "type": "array",
-          "description": "The schema for UCI data",
-          "title": "Party PartyUCI result",
+          "description": "The schema for Registration Search data",
+          "title": "Party Registration Search result",
+
           "items": {
             "type": "object",
             "required": [

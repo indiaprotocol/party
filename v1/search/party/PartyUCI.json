@@ -20,6 +20,7 @@
           "required": [
             "q",
             "process_id",
+            "probability",
             "time_ms"
           ],
           "properties": {
@@ -35,6 +36,10 @@
               "type": "string",
               "example": "5f985a990aa73d3ee6e8aebe"
             },
+            "probability": {
+              "type": "number",
+              "example": 0.0
+            },
             "time_ms": {
               "description": "Time taken to return the results in ms",
               "title": "Response time in ms",
@@ -45,22 +50,50 @@
         },
         "data": {
           "description": "The schema for UCI data",
+          "type": "array",
           "title": "Party PartyUCI result",
-          "type": "object",
-          "required": [
-            "probability",
-            "party_ids"
-          ],
-          "properties": {
-            "probability": {
-              "type": "number",
-              "example": 0.0
-            },
-            "party_ids": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "example": "556277cf6d6f6f376276f50f"
+          "items": {
+            "type": "object",
+            "required": [
+              "party"        
+            ],
+            "properties": {
+              "party": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "party_id",
+                  "type",
+                  "dba",
+                  "match_score"
+                ],
+                "properties": {
+                  "name":{
+                    "type": "string",
+                    "example": "Crediwatch"
+                  },
+                  "party_id": {
+                    "description": "Unique IDentifier of Party",
+                    "title": "Unique IDentifier",
+                    "type": "string",
+                    "example": "556277cf6d6f6f376276f50f"
+                  },
+                  "dba": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": "crediwatch"
+                    }
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "private_company"
+                  },
+                  "match_score":{
+                    "type": "number",
+                    "example": 0.0
+                  }
+                }
               }
             }
           }
