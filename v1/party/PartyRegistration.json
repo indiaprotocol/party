@@ -21,7 +21,7 @@
           "type": "string"
         },
         "duration": {
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#dateRange"
+          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/dateRange"
         },
         "name": {
           "type": "string"
@@ -30,10 +30,10 @@
           "type": "string"
         },
         "sources": {
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/dataTypes/v1.json#sources"
+          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/dataTypes/v1.json#/definitions/sources"
         },
         "information": {
-          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/v1/party/PartyInformations.json"
+          "$ref": "https://raw.githubusercontent.com/indiaprotocol/protocol/master/party/PartyInformations.json"
         }
       },
       "required": [
