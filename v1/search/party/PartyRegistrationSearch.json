@@ -47,6 +47,7 @@
           "type": "array",
           "description": "The schema for Registration Search data",
           "title": "Party Registration Search result",
+
           "items": {
             "type": "object",
             "required": [
